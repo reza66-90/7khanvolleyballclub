@@ -9,45 +9,55 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
+.register-logo{
+width:130px;
+height:130px;
+object-fit:contain;
+display:block;
+margin:0 auto 20px;
+padding:12px;
+border-radius:50%;
+background:rgba(255,255,255,.03);
+border:2px solid rgba(212,175,55,.4);
+box-shadow:
+0 0 25px rgba(212,175,55,.25),
+0 0 50px rgba(212,175,55,.08);
+}
 
 .register-btn{
 display:inline-block;
-
 margin-top:25px;
-
 padding:14px 30px;
-
 background:linear-gradient(45deg,#d4af37,#f1c85b);
 color:#000;
-
 font-weight:800;
-
 border-radius:50px;
-
 cursor:pointer;
-
 transition:.3s;
 }
 .register-btn:hover{
 transform:translateY(-4px);
 }
-background:linear-gradient(45deg,#d4af37,#f1c85b);
-color:#000;
-
-padding:14px 22px;
-
-border-radius:50px;
-
-font-weight:800;
-cursor:pointer;
-
-box-shadow:0 0 25px rgba(212,175,55,.35);
-
-transition:.3s;
+.register-btn{
+  background:linear-gradient(45deg,#d4af37,#f1c85b);
+  color:#000;
+  padding:14px 22px;
+  border-radius:50px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(212,175,55,.35);
+  transition:.3s;
 }
 
+.phone{
+font-size:22px !important;
+font-weight:900 !important;
+color:#d4af37 !important;
+letter-spacing:1px;
+text-shadow:0 0 15px rgba(212,175,55,.4);
+}
 .register-btn:hover{
-transform:translateY(-4px);
+  transform:translateY(-4px);
 }
 .register-modal{
 position:fixed;
@@ -197,18 +207,40 @@ cursor:pointer;
 }
 
 .register-info{
-background:rgba(212,175,55,.08);
-border-radius:15px;
-padding:20px;
+background:linear-gradient(135deg,
+rgba(212,175,55,.12),
+rgba(212,175,55,.04));
+border:1px solid rgba(212,175,55,.35);
+border-radius:18px;
+padding:30px 20px;
 text-align:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
+gap:12px;
 }
 
 .register-info h3{
 color:#d4af37;
+font-size:24px;
+font-weight:900;
 margin-bottom:15px;
+letter-spacing:.5px;
+}
+}
+
+.register-info p{
+font-size:16px;
+line-height:2;
+color:#e8e8e8;
+font-weight:500;
+margin:0;
+}
+
+.register-info p:first-of-type{
+font-size:20px;
+font-weight:800;
+color:#fff;
 }
 
 .close-register{
@@ -772,15 +804,54 @@ object-fit:contain;
 }
 .sponsor-info{
 text-align:right;
-}
-.sponsor-info h3{
-font-size:32px;
-color:#d4af37;
-margin-bottom:15px;
+padding:10px;
 }
 .sponsor-info p{
+font-size:28px;
 line-height:2;
-color:#ddd;
+font-weight:800;
+color:#f5f5f5;
+text-shadow:0 0 10px rgba(255,255,255,.15);
+}
+
+.sponsor-info h3{
+font-size:42px;
+font-weight:900;
+color:#d4af37;
+margin-bottom:18px;
+letter-spacing:1px;
+text-shadow:
+0 0 10px rgba(212,175,55,.4),
+0 0 25px rgba(212,175,55,.2);
+}
+
+.sponsor-info p{
+font-size:18px;
+line-height:2.2;
+font-weight:500;
+color:#f1f1f1;
+letter-spacing:.3px;
+}
+.sponsor-name{
+font-size:48px;
+font-weight:900;
+background:linear-gradient(
+45deg,
+#f8e08a,
+#d4af37,
+#fff1b0,
+#d4af37
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:none;
+letter-spacing:2px;
+}
+.sponsor-info p{
+font-size:17px;
+line-height:2.3;
+font-weight:600;
+color:#e6e6e6;
 }
 @media(max-width:768px){
 .main-sponsor{
@@ -823,36 +894,88 @@ margin-top:50px;
   border-radius:12px;
   animation:zoomIn 0.2s ease;
 }
+/* کادر اصلی */
 .contact-box{
-max-width:700px;
+max-width:800px;
 margin:auto;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(212,175,55,0.25);
-border-radius:20px;
-padding:30px;
-backdrop-filter:blur(12px);
-box-shadow:0 0 30px rgba(212,175,55,0.08);
+padding:35px;
+border-radius:28px;
+
+.address-line{
+padding:12px 16px;
+margin:12px 0 !important;
+border-radius:14px;
+
+background:rgba(212,175,55,.05);
+border:1px solid rgba(212,175,55,.15);
+
+transition:.3s;
 }
+
+.address-line:hover{
+border-color:#d4af37;
+background:rgba(212,175,55,.08);
+box-shadow:0 0 20px rgba(212,175,55,.12);
+}
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.06),
+rgba(255,255,255,.02)
+);
+
+border:1px solid rgba(212,175,55,.35);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.35),
+0 0 30px rgba(212,175,55,.08),
+inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* هر آیتم */
 .contact-item{
 display:flex;
-align-items:center;
-gap:18px;
-padding:18px 0;
-border-bottom:1px solid rgba(255,255,255,0.08);
-font-size:22px;
+align-items:flex-start;
+gap:20px;
+padding:22px 0;
+border-bottom:1px solid rgba(212,175,55,.12);
+transition:.3s;
 }
-.contact-item:last-child{
-border-bottom:none;
+
+.contact-item:hover{
+transform:translateX(-6px);
 }
-.contact-item h4{
+
+/* آیکون‌ها */
+.contact-item i{
+font-size:30px;
 color:#d4af37;
-font-size:18px;
-margin-bottom:4px;
+min-width:40px;
+text-shadow:0 0 18px rgba(212,175,55,.4);
 }
+
+/* عنوان */
+.contact-item h4{
+font-size:20px;
+font-weight:900;
+color:#d4af37;
+margin-bottom:8px;
+}
+
+/* متن آدرس */
 .contact-item p{
-color:#ddd;
-font-size:14px;
-margin:0;
+font-size:16px;
+line-height:2.1;
+color:#ededed;
+margin:8px 0;
+}
+
+/* بخش آدرس‌ها */
+.contact-item:last-child{
+padding-top:28px;
 }
 .social-links{
 display:flex;
@@ -900,33 +1023,97 @@ flex-wrap:wrap;
 max-width:1000px;
 margin:auto;
 }
+/* قاب لاکچری کیت */
 .kit-card{
-width:320px;
-padding:20px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(212,175,55,0.25);
-border-radius:20px;
-backdrop-filter:blur(12px);
-text-align:center;
-transition:.3s;
+width:420px;
+padding:30px;
+border-radius:28px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.07),
+rgba(255,255,255,.02)
+);
+
+border:1px solid rgba(212,175,55,.35);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.35),
+0 0 30px rgba(212,175,55,.08);
+
+transition:.4s;
+overflow:hidden;
+position:relative;
 }
+
+/* نوار طلایی بالا */
+.kit-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(
+90deg,
+transparent,
+#d4af37,
+#f1c85b,
+#d4af37,
+transparent
+);
+}
+
+/* افکت هاور */
 .kit-card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 border-color:#d4af37;
-box-shadow:0 0 35px rgba(212,175,55,.2);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.4),
+0 0 40px rgba(212,175,55,.2);
 }
+
+/* عکس لباس بزرگ */
 .kit-card img{
 width:100%;
-height:350px;
+height:500px;
 object-fit:contain;
-margin-bottom:15px;
+padding:15px;
+transition:.4s;
 }
+
+/* زوم نرم */
+.kit-card:hover img{
+transform:scale(1.05);
+}
+
+/* عنوان */
 .kit-card h3{
+font-size:26px;
+font-weight:900;
 color:#d4af37;
-margin-bottom:10px;
+margin-top:10px;
+margin-bottom:12px;
 }
+
+/* توضیح */
 .kit-card p{
-color:#ccc;
+font-size:17px;
+line-height:1.9;
+color:#e5e5e5;
+}
+.kit-grid{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+max-width:1200px;
+margin:auto;
 }
 @media(max-width:768px){
 .kit-card{
@@ -936,6 +1123,15 @@ max-width:320px;
 .kit-card img{
 height:260px;
 }
+}
+.kit-card img{
+transition:all .5s ease;
+cursor:pointer;
+}
+
+.kit-card:hover img{
+transform:scale(1.15);
+filter:drop-shadow(0 0 25px rgba(212,175,55,.5));
 }
 @media (max-width: 768px){
   /* تیتر اصلی */
@@ -1288,12 +1484,7 @@ padding:20px;
         <span class="year">2016 - 2018</span>
         <span class="text">تیم ملی نظامیان ایران</span>
       </div>
-      <div class="history-item highlight">
-        <span class="year">FIVB</span>
-        <span class="text">مربی رسمی فدراسیون جهانی والیبال</span>
-      </div>
     </div>
-  </div>
 </section>
 <section id="team" class="section">
   <h2>تیم زیر ۱۶ سال هفت‌خان</h2>
@@ -1384,16 +1575,16 @@ padding:20px;
 <td>سالن خانه والیبال</td>
 </tr>
 <tr>
-<td>1405/04/22</td>
-<td>سایپا</td>
-<td>18:30</td>
-<td>سالن اندیشه</td>
+<td>1405/0/0</td>
+<td> </td>
+<td>00:00</td>
+<td> </td>
 </tr>
 <tr>
-<td>1405/04/29</td>
-<td>شهرداری تهران</td>
-<td>16:00</td>
-<td>بنی جمالی</td>
+<td>1405/0/0</td>
+<td>  </td>
+<td>00:00</td>
+<td> </td>
 </tr>
 </tbody>
 </table>
@@ -1417,25 +1608,24 @@ padding:20px;
 <td>0 - 2 ❌</td>
 </tr>
 <tr>
-<td>1405/03/17</td>
-<td>هفت‌خان - پاس</td>
-<td>3 - 2 ✅</td>
+<td>1405/0/0</td>
+<td>هفت‌خان -  </td>
+<td>  -    </td>
 </tr>
 <tr>
-<td>1405/03/24</td>
-<td>هفت‌خان - پیکان</td>
-<td>1 - 3 ❌</td>
+<td>1405/0/0</td>
+<td>هفت‌خان -  </td>
+<td>  -    </td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
 <section class="section">
-  <h2>اسپانسر رسمی آکادمی</h2>
+  <h2>اسپانسر رسمی تیم زیر 16 سال</h2>
   <div class="main-sponsor">
     <img src="images/sponsor1.png" alt="اسپانسر">
-    <div class="sponsor-info">
-      <h3>روژین‌تاک</h3>
+ <h3 class="sponsor-name">روژین‌تاک</h3>
       <p>
         تولیدات کشت و صنعت روژین‌تاک<br>
         حامی رسمی آکادمی والیبال هفت‌خان
@@ -1506,9 +1696,16 @@ padding:20px;
       <i class="fa-solid fa-location-dot"></i>
       <div>
         <h4>آدرس باشگاه‌ها</h4>
-        <p>📍 تهران، نوفل لوشاتو، بعد از پل حافظ، باشگاه ورزشی حیدرنیا</p>
-        <p>📍 تهران، شهید بهشتی، عباس میرزا، بین شقایق و شهید ملک‌محمدی، باشگاه ورزشی اندیشه</p>
-        <p>📍 تهران، سهروردی شمالی، نرسیده به خرمشهر، باشگاه ورزشی بنی جمالی</p>
+       <p class="address-line">
+📍 تهران، نوفل لوشاتو، بعد از پل حافظ، باشگاه ورزشی حیدرنیا
+</p>
+
+<p class="address-line">
+📍 تهران، شهید بهشتی، عباس میرزا، بین شقایق و شهید ملک‌محمدی، باشگاه ورزشی اندیشه
+</p>
+<p class="address-line">
+📍 تهران، سهروردی شمالی، نرسیده به خرمشهر، باشگاه ورزشی بنی جمالی
+</p>
       </div>
     </div>
   </div>
@@ -1569,12 +1766,24 @@ section.classList.add("show");
       <input type="text" placeholder="نام خانوادگی">
 
       <input type="tel" placeholder="شماره تماس">
-
+    <select id="course">
+    <option value=""> سالن اندیشه  </option>
+    <option value="full2"> یک ماهه (۲ روز در هفته شنبه و چهارشنبه ساعت 17:30 الی 19:00 )</option>
+</select>
+    <select id="course">
+    <option value=""> سالن بنی جمالی  </option>
+    <option value="full2">  یک ماهه مبتدی (۲ روز در هفته یکشنبه و سه شنبه ساعت 11:30 الی
+ 12:30 )
+    </option>
+    <option value="full2">  یک ماهه نیمه پیشرفته و پیشرفته  (۲ روز در هفته یکشنبه و سه شنبه ساعت 19:00 الی
+ 20:30 )
+    </option>
+</select>
      <select id="course">
-    <option value="">انتخاب دوره</option>
-    <option value="full2">ترم کامل (۲ روز در هفته)</option>
-    <option value="month2">یک ماهه (۲ روز در هفته)</option>
-    <option value="full1">ترم کامل (۱ روز در هفته)</option>
+    <option value="">سالن حیدرنیا </option>
+    <option value="full2">یک ماهه پیشرفته  (۲ روز در هفته شنبه و چهارشنبه ساعت 7:30 الی 9:00 صبح)</option>
+    <option value="month2">یک ماهه مبتدی (۲ روز در هفته شنبه و چهارشنبه ساعت 9:00 الی 10:30صبح)</option>
+    <option value="full1"> یک ماهه نیمه پیشرفته (۲ روز در هفته شنبه و چهارشنبه ساعت 10:30 الی12:00 صبح )</option>
 </select>
 
 <button type="button" onclick="submitRegister()">
@@ -1583,19 +1792,19 @@ section.classList.add("show");
 
     </div>
 
-    <div class="register-info">
+<div class="register-info">
 
-      <h3>اطلاعات تماس</h3>
+<img src="images/logo.png" class="register-logo">
 
-      <p>📞 09126494699</p>
+<h3>اطلاعات تماس</h3>
 
-      <p>🕙 ساعت پاسخگویی</p>
+<p class="phone">📞 09126494699</p>
 
-      <p>10 الی 18</p>
+<p>🕙 ساعت پاسخگویی</p>
+<p>10 الی 18</p>
+<p>همه روزه</p>
 
-      <p>همه روزه</p>
-
-    </div>
+</div>
 
   </div>
 
