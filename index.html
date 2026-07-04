@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -1909,11 +1907,11 @@ section.classList.add("show");
       <input type="text" placeholder="نام خانوادگی">
 
       <input type="tel" placeholder="شماره تماس">
-    <select id="course">
+    <select class="course">
     <option value=""> سالن اندیشه  </option>
     <option value="full2"> یک ماهه (۲ روز در هفته شنبه و چهارشنبه ساعت 17:30 الی 19:00 )</option>
 </select>
-    <select id="course">
+    <select class="course">
     <option value=""> سالن بنی جمالی  </option>
     <option value="full2">  یک ماهه مبتدی (۲ روز در هفته یکشنبه و سه شنبه ساعت 11:30 الی
  12:30 )
@@ -1922,7 +1920,7 @@ section.classList.add("show");
  20:30 )
     </option>
 </select>
-     <select id="course">
+     <select class="course">
     <option value="">سالن حیدرنیا </option>
     <option value="full2">یک ماهه پیشرفته  (۲ روز در هفته شنبه و چهارشنبه ساعت 7:30 الی 9:00 صبح)</option>
     <option value="month2">یک ماهه مبتدی (۲ روز در هفته شنبه و چهارشنبه ساعت 9:00 الی 10:30صبح)</option>
@@ -1967,7 +1965,9 @@ function submitRegister(){
     let name = document.querySelector('input[placeholder="نام"]').value;
     let family = document.querySelector('input[placeholder="نام خانوادگی"]').value;
     let phone = document.querySelector('input[placeholder="شماره تماس"]').value;
-    let course = document.getElementById("course").value;
+    let selects=document.querySelectorAll(".course");
+    let course="";
+    selects.forEach(s=>{if(s.value) course=s.value;});
 
     if(name === "" || family === "" || phone === "" || course === ""){
         alert("لطفاً تمام اطلاعات را کامل وارد کنید");
@@ -1986,6 +1986,8 @@ function submitRegister(){
         window.location.href = "https://zarinp.al/yourlink3";
     }
 }
+</script>
+
 <script>
 function toggleMenu(){
     document.querySelector(".nav").classList.toggle("active");
