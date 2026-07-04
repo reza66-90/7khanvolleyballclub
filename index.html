@@ -1431,6 +1431,47 @@ padding:20px;
 
 }
 
+.menu-toggle{
+    display:none;
+    position:absolute;
+    left:20px;
+    font-size:26px;
+    color:#d4af37;
+    cursor:pointer;
+    z-index:2000;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.nav{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:250px;
+    height:100%;
+    background:#111;
+    display:flex;
+    flex-direction:column;
+    padding-top:80px;
+    gap:20px;
+    transition:.35s;
+    z-index:1500;
+    border-left:1px solid rgba(212,175,55,.3);
+}
+
+.nav.active{
+    right:0;
+}
+
+.nav a{
+    padding:12px 25px;
+    font-size:16px;
+}
+}
 </style>
 </head>
 <body>
@@ -1452,7 +1493,9 @@ padding:20px;
   مسیر قهرمانی از استعداد تا افتخار
 </div> 
  
-
+<div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+</div>
 </header>
 
 <section id="home" class="hero">
@@ -1892,6 +1935,12 @@ function submitRegister(){
     if(course === "full1"){
         window.location.href = "https://zarinp.al/yourlink3";
     }
+}
+</script>
+
+<script>
+function toggleMenu(){
+    document.querySelector(".nav").classList.toggle("active");
 }
 </script>
 
