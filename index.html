@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -1431,46 +1433,96 @@ padding:20px;
 
 .menu-toggle{
     display:none;
+}
+
+@media (max-width:768px){
+
+.menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
     position:absolute;
     left:20px;
+    top:18px;
+    width:45px;
+    height:45px;
     font-size:26px;
     color:#d4af37;
     cursor:pointer;
-    z-index:2000;
-}
-
-@media(max-width:768px){
-
-.menu-toggle{
-    display:block;
+    border-radius:12px;
+    background:#111;
+    border:1px solid rgba(212,175,55,.35);
+    box-shadow:0 8px 25px rgba(0,0,0,.45);
+    z-index:3000;
 }
 
 .nav{
-    position:fixed;
-    top:0;
-    right:-260px;
-    width:250px;
-    height:100%;
-    background:#111;
-    display:flex;
+    position:absolute;
+    top:72px;
+    left:20px;
+
+    width:220px;
+
+    display:none;
     flex-direction:column;
-    padding-top:80px;
-    gap:20px;
-    transition:.35s;
-    z-index:1500;
-    border-left:1px solid rgba(212,175,55,.3);
+
+    background:#111;
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.55),
+    0 0 20px rgba(212,175,55,.12);
+
+    z-index:2500;
+}
+
+.nav::before{
+    content:"";
+    position:absolute;
+    top:-8px;
+    left:22px;
+
+    width:16px;
+    height:16px;
+
+    background:#111;
+
+    border-top:1px solid rgba(212,175,55,.35);
+    border-left:1px solid rgba(212,175,55,.35);
+
+    transform:rotate(45deg);
 }
 
 .nav.active{
-    right:0;
+    display:flex;
 }
 
 .nav a{
-    padding:12px 25px;
-    font-size:16px;
+    color:#fff;
+    text-decoration:none;
+    padding:16px 20px;
+    font-weight:700;
+    border-bottom:1px solid rgba(212,175,55,.12);
+    transition:.25s;
+}
+
+.nav a:last-child{
+    border-bottom:none;
+}
+
+.nav a:hover{
+    background:#d4af37;
+    color:#000;
 }
 }
 </style>
+
+<link rel="icon" type="image/png" href="images/logo.png">
+
+</head>
 </head>
 <body>
 <header class="header">
@@ -1934,12 +1986,16 @@ function submitRegister(){
         window.location.href = "https://zarinp.al/yourlink3";
     }
 }
-</script>
-
 <script>
 function toggleMenu(){
     document.querySelector(".nav").classList.toggle("active");
 }
+
+document.querySelectorAll(".nav a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        document.querySelector(".nav").classList.remove("active");
+    });
+});
 </script>
 
 </body>
