@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -1307,29 +1309,23 @@ padding:12px;
 /* ===== FIX HEADER + HERO MOBILE CLEAN ===== */
 @media (max-width: 768px){
   /* هدر کاملاً جمع و مرتب */
-  .header{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 10px;
-    gap: 8px;
-  }
+/* HERO MOBILE CLEAN */
   /* لوگو و عنوان وسط و کوچک‌تر */
-  .center-logo{
-    height: 38px;
-  }
-  .center-title{
-    font-size: 14px;
-    text-align: center;
-  }
+.center-brand{
+    position:static;
+    transform:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
   /* منو کامل حذف (فعلاً ساده نگه داریم) */
   .nav{
     display: none;
   }
   /* شعار حذف در موبایل */
-  .header-slogan{
-    display: none;
-  }
+.header-slogan{
+    display:none;
+}
   /* مهم‌ترین FIX برای عکس اول */
   .hero{
     height: 55vh;
@@ -1439,9 +1435,6 @@ padding:20px;
     display:flex;
     align-items:center;
     justify-content:center;
-    position:absolute;
-    left:20px;
-    top:18px;
     width:45px;
     height:45px;
     font-size:26px;
@@ -1451,7 +1444,10 @@ padding:20px;
     background:#111;
     border:1px solid rgba(212,175,55,.35);
     box-shadow:0 8px 25px rgba(0,0,0,.45);
-    z-index:3000;
+
+    position:static;
+    transform:none;
+    margin-right:15px;
 }
 
 .nav{
@@ -1519,6 +1515,18 @@ padding:20px;
 </style>
 
 <link rel="icon" type="image/png" href="images/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SportsClub",
+  "name":"آکادمی والیبال هفت‌خان",
+  "logo":"https://7khanvolleyball.ir/images/logo.png",
+  "url":"https://7khanvolleyball.ir/"
+}
+</script>
+
+</head>
 
 </head>
 </head>
