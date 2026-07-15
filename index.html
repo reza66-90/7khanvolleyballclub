@@ -869,6 +869,67 @@ border-top:1px solid rgba(212,175,55,0.2);
 color:#777;
 margin-top:50px;
 }
+  .footer{
+    margin-top:60px;
+    padding:35px 20px;
+    text-align:center;
+    border-top:1px solid rgba(212,175,55,.18);
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
+}
+
+.footer .copyright{
+    color:#bdbdbd;
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.designer{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:40px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(212,175,55,.25);
+    transition:.35s;
+}
+
+.designer:hover{
+    border-color:#d4af37;
+    box-shadow:0 0 25px rgba(212,175,55,.18);
+    transform:translateY(-2px);
+}
+
+.designer span{
+    color:#999;
+    font-size:13px;
+}
+
+.designer a{
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.designer a i{
+    font-size:18px;
+}
+
+.designer a:hover{
+    color:#f3d56a;
+}
+
+@media(max-width:768px){
+    .designer{
+        flex-direction:column;
+        gap:6px;
+        padding:12px 16px;
+    }
+}
 /* RESPONSIVE */
 @media(max-width:768px){
 .hero h1{font-size:34px;}
@@ -1855,8 +1916,21 @@ padding:20px;
     </div>
   </div>
 </section>
-<footer>
-© آکادمی والیبال هفت‌خان - تمام حقوق محفوظ است
+<footer class="footer">
+
+  <p class="copyright">
+    © آکادمی والیبال هفت‌خان - تمامی حقوق محفوظ است.
+  </p>
+
+  <div class="designer">
+    <span>طراحی و توسعه</span>
+
+    <a href="https://instagram.com/resam_rm" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+      مهندس رضا مهرابی
+    </a>
+  </div>
+
 </footer>
 <script>
 function openLightbox(src){
