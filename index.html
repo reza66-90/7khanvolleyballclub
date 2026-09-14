@@ -3,279 +3,3646 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>آکادمی والیبال هفت‌خان | مسیر قهرمانی</title>
-<meta name="description" content="آکادمی والیبال هفت‌خان؛ آموزش والیبال، تیم زیر ۱۶ سال، دوره‌های مبتدی تا پیشرفته و ثبت‌نام آنلاین.">
+
+<meta name="description" content="آکادمی والیبال هفت‌خان؛ آموزش والیبال، استعدادیابی و پرورش نسل جدید والیبال.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <link rel="icon" type="image/png" href="images/logo.png">
 
 <style>
+/* =========================================================
+   RESET
+========================================================= */
+
 :root{
- --bg:#07111f;--bg2:#0b1830;--card:#0e1d32;--line:rgba(255,255,255,.1);
- --text:#f7f9fc;--muted:#9eacc0;--blue:#20a8ff;--blue2:#0969ff;--gold:#e9c56a;
- --radius:26px;--shadow:0 24px 70px rgba(0,0,0,.28)
+    --navy:#07111f;
+    --navy-2:#0c1a2b;
+    --navy-3:#10243a;
+
+    --gold:#d8ad62;
+    --gold-light:#f0d49a;
+
+    --white:#ffffff;
+    --off:#f7f8fa;
+    --line:#e7e9ed;
+    --text:#17202b;
+    --muted:#697381;
+
+    --radius:24px;
+    --shadow:0 18px 50px rgba(10,24,40,.08);
+    --shadow-dark:0 20px 60px rgba(0,0,0,.20);
+
+    --container:1180px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Vazirmatn,sans-serif;background:
- radial-gradient(circle at 85% 8%,rgba(0,126,255,.18),transparent 30rem),
- radial-gradient(circle at 10% 55%,rgba(99,48,220,.12),transparent 28rem),var(--bg);
- color:var(--text);line-height:1.9;overflow-x:hidden}
-a{text-decoration:none;color:inherit}button,input,select{font:inherit}
-.container{width:min(1160px,calc(100% - 32px));margin:auto}
-.section{padding:100px 0}
-.glass{background:rgba(10,25,44,.76);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
-.eyebrow{color:var(--gold);font-size:.75rem;font-weight:800;letter-spacing:.12em;margin-bottom:8px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:38px}
-.section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.25}
-.section-head p{max-width:500px;color:var(--muted);font-size:.92rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:14px;padding:12px 20px;cursor:pointer;font-weight:800;transition:.25s}
-.btn:hover{transform:translateY(-3px)}
-.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 12px 30px rgba(0,115,255,.25)}
-.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);color:#fff}
 
-header{position:fixed;top:15px;left:0;right:0;z-index:50}
-.nav{height:72px;border-radius:22px;padding:9px 16px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800}
-.brand img{width:47px;height:47px;object-fit:contain;border-radius:13px}
-.brand small{display:block;color:#8291a6;font-size:.62rem;font-weight:500}
-.navlinks{display:flex;gap:3px}.navlinks a{padding:9px 12px;border-radius:11px;color:#cbd6e4;font-size:.84rem}
-.navlinks a:hover{background:rgba(255,255,255,.06);color:#fff}
-.menu{display:none;border:0;background:none;color:#fff;font-size:1.35rem}
-
-.hero{min-height:850px;padding:145px 0 80px;display:flex;align-items:center}
-.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:65px;align-items:center}
-.hero-copy .tag{display:inline-flex;align-items:center;gap:8px;color:var(--gold);background:rgba(233,197,106,.07);border:1px solid rgba(233,197,106,.25);padding:7px 13px;border-radius:999px;font-size:.78rem;font-weight:700;margin-bottom:22px}
-.hero h1{font-size:clamp(3.2rem,6.2vw,6rem);line-height:1.02;letter-spacing:-.055em;margin-bottom:22px}
-.hero h1 span{display:block;color:var(--blue)}
-.hero-lead{color:#b6c3d5;font-size:1.05rem;max-width:600px;margin-bottom:28px}
-.actions{display:flex;gap:10px;flex-wrap:wrap}
-.stats{display:flex;gap:32px;margin-top:34px}.stats strong{display:block;font-size:1.6rem}.stats span{font-size:.76rem;color:var(--muted)}
-.hero-photo{height:590px;border-radius:34px;overflow:hidden;position:relative;background:#0c1a2d;border:1px solid var(--line);box-shadow:var(--shadow)}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity .7s}.slide.active{opacity:1}
-.slide:before{content:"";position:absolute;inset:-20px;background:var(--image) center/cover;filter:blur(24px) brightness(.42);transform:scale(1.08)}
-.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px}
-.hero-caption{position:absolute;right:22px;bottom:22px;left:22px;padding:15px 17px;border-radius:18px;background:rgba(3,10,19,.7);border:1px solid var(--line);backdrop-filter:blur(12px)}
-.hero-caption b{display:block}.hero-caption span{color:#b6c2d0;font-size:.75rem}
-.dots{position:absolute;left:22px;bottom:30px;display:flex;gap:6px}.dot{border:0;width:7px;height:7px;border-radius:99px;background:#fff5}.dot.active{width:24px;background:var(--gold)}
-
-.intro{border-block:1px solid var(--line);padding:15px 0;background:rgba(255,255,255,.018)}
-.intro-row{display:flex;justify-content:center;gap:42px;flex-wrap:wrap;color:#b9c5d5;font-size:.8rem}.intro-row i{color:var(--gold);margin-left:7px}
-
-.about{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
-.about-card{border-radius:var(--radius);padding:35px;min-height:280px}
-.about-card h3{font-size:1.5rem;margin-bottom:12px}.about-card p{color:var(--muted)}
-.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}.check{padding:12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line);font-size:.85rem}.check i{color:var(--gold);margin-left:7px}
-
-.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.course{border-radius:var(--radius);overflow:hidden}.course-img{height:240px;overflow:hidden}.course-img img{width:100%;height:100%;object-fit:cover;transition:.5s}.course:hover img{transform:scale(1.05)}
-.course-body{padding:23px}.course-body h3{margin-bottom:8px}.course-body p{color:var(--muted);font-size:.84rem;min-height:62px;margin-bottom:18px}
-
-.coach{display:grid;grid-template-columns:.7fr 1.3fr;border-radius:30px;overflow:hidden}.coach-img{min-height:480px}.coach-img img{width:100%;height:100%;object-fit:cover}.coach-info{padding:45px}.coach-info h3{font-size:2rem}.role{color:var(--gold);font-weight:700;margin:5px 0 20px}.coach-info>p{color:var(--muted);margin-bottom:22px}.history{display:grid;gap:10px}.history div{padding:12px 15px;background:rgba(255,255,255,.04);border-right:3px solid var(--blue);border-radius:11px;color:#c3cedd;font-size:.84rem}.history b{color:#fff;margin-left:9px}
-
-.u16{padding:42px;border-radius:30px;background:linear-gradient(120deg,#0c3153,#111f48 58%,#2a1942);display:flex;align-items:center;justify-content:space-between;gap:25px}.u16 h3{font-size:2rem}.u16 p{color:#bcc8d8;max-width:700px}
-
-.matches{display:grid;grid-template-columns:1fr 1fr;gap:18px}.matchbox{padding:27px;border-radius:25px}.matchbox h3{margin-bottom:15px}.match{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding:14px 0;border-top:1px solid var(--line);font-size:.8rem}.match:first-of-type{border-top:0}.match small{color:var(--muted);font-size:.7rem}.score{font-weight:900;color:var(--gold);white-space:nowrap}
-
-.sponsor{padding:40px;border-radius:30px;display:grid;grid-template-columns:170px 1fr auto;align-items:center;gap:30px;background:linear-gradient(110deg,rgba(233,197,106,.08),rgba(255,255,255,.025))}
-.sponsor img{width:170px;height:125px;object-fit:contain;background:#fff;border-radius:20px;padding:12px}.sponsor h3{font-size:1.8rem}.sponsor p{color:var(--muted);font-size:.87rem}
-
-.kits{display:grid;grid-template-columns:1fr 1fr;gap:18px}.kit{height:410px;border-radius:28px;overflow:hidden;position:relative}.kit img{width:100%;height:100%;object-fit:cover}.kit-info{position:absolute;right:0;bottom:0;left:0;padding:26px;background:linear-gradient(transparent,rgba(0,0,0,.9))}.kit-info p{color:#b8c3d1;font-size:.78rem}
-
-.gallery{columns:3 260px;column-gap:15px}.gallery a{display:block;break-inside:avoid;margin-bottom:15px;border-radius:18px;overflow:hidden;border:1px solid var(--line);cursor:pointer}.gallery img{width:100%;display:block;transition:.4s}.gallery a:hover img{transform:scale(1.035)}
-
-.final-cta{padding:60px 25px;border-radius:32px;text-align:center;background:linear-gradient(135deg,#087bdc,#3b2397)}.final-cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:8px}.final-cta p{color:#d8e4f2;margin-bottom:23px}
-
-footer{background:#050c16;border-top:1px solid var(--line);padding:65px 0 22px}.footer-grid{display:grid;grid-template-columns:1.15fr .8fr .8fr 1.35fr;gap:40px}.footer h4{margin-bottom:14px}.footer p,.footer li,.location{color:#8e9bae;font-size:.78rem}.footer ul{list-style:none;display:grid;gap:7px}.locations{display:grid;gap:8px}.location{padding:10px 12px;background:rgba(255,255,255,.035);border-radius:11px}.socials{display:flex;gap:7px;margin-top:16px}.socials a{width:37px;height:37px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line)}
-.copy{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;color:#667488;font-size:.7rem}.copy a{color:#9aabc0}
-
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(12px);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}
-.modal-card{width:min(980px,100%);max-height:90vh;overflow:auto;padding:28px;border-radius:26px;background:#0a1728;border:1px solid var(--line);position:relative}.close{position:absolute;left:17px;top:17px;width:38px;height:38px;border:0;border-radius:11px;background:rgba(255,255,255,.07);color:#fff;cursor:pointer;font-size:1.2rem}.modal-title{text-align:center;margin-bottom:24px}
-.players{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.player{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}.player img{width:100%;height:175px;object-fit:cover}.player-info{padding:10px;text-align:center}.player-info b{display:block;font-size:.8rem}.player-info span{color:var(--gold);font-size:.75rem;font-weight:800}
-.form{display:grid;gap:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;color:#9eadc0;font-size:.75rem;margin-bottom:5px}.field input,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#102139;color:#fff;outline:0}.note{padding:11px;border-radius:11px;background:rgba(32,168,255,.07);color:#aebbd0;font-size:.76rem}
-.lightbox img{max-width:90vw;max-height:82vh;border-radius:18px}
-
-@media(max-width:900px){
- .navlinks{display:none}.menu{display:block}.hero{padding-top:125px}.hero-grid,.about,.coach{grid-template-columns:1fr}.hero-photo{height:470px;order:-1}.courses{grid-template-columns:1fr 1fr}.coach-img{min-height:360px}.sponsor{grid-template-columns:120px 1fr}.sponsor img{width:120px;height:100px}.sponsor .btn{grid-column:1/-1}.footer-grid{grid-template-columns:1fr 1fr}.players{grid-template-columns:repeat(3,1fr)}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-@media(max-width:600px){
- .container{width:calc(100% - 24px)}.section{padding:75px 0}.section-head{display:block}.section-head p{margin-top:10px}.hero{padding-top:110px}.hero-grid{gap:30px}.hero h1{font-size:3.2rem}.hero-photo{height:380px}.stats{gap:20px}.stats strong{font-size:1.35rem}
- .courses,.matches,.kits,.footer-grid{grid-template-columns:1fr}.checks{grid-template-columns:1fr}.coach-info{padding:28px}.u16{display:block;padding:28px}.u16 .btn{margin-top:18px}.sponsor{display:block;text-align:center;padding:28px}.sponsor img{margin:0 auto 16px}.sponsor .btn{margin-top:18px}.gallery{columns:2 140px;column-gap:9px}.gallery a{margin-bottom:9px}.players{grid-template-columns:repeat(2,1fr)}.player img{height:145px}.form-grid{grid-template-columns:1fr}.copy{display:block;text-align:center}.copy div+div{margin-top:7px}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Vazirmatn",sans-serif;
+    background:var(--off);
+    color:var(--text);
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+body.modal-open{
+    overflow:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(var(--container),calc(100% - 40px));
+    margin:auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1000;
+    padding:16px 0;
+    transition:.3s ease;
+}
+
+.site-header.scrolled{
+    padding:9px 0;
+    background:rgba(7,17,31,.94);
+    backdrop-filter:blur(18px);
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+.header-inner{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    padding:8px 14px 8px 20px;
+
+    background:rgba(7,17,31,.72);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:20px;
+    backdrop-filter:blur(18px);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:max-content;
+}
+
+.brand img{
+    width:46px;
+    height:46px;
+    object-fit:contain;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.3;
+}
+
+.brand-text strong{
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+}
+
+.brand-text span{
+    color:rgba(255,255,255,.55);
+    font-size:10px;
+    margin-top:2px;
+}
+
+.main-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+}
+
+.main-nav a{
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    font-weight:500;
+    padding:9px 13px;
+    border-radius:10px;
+    transition:.25s;
+}
+
+.main-nav a:hover{
+    color:#fff;
+    background:rgba(255,255,255,.07);
+}
+
+.header-action{
+    min-width:max-content;
+}
+
+.btn-small{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:43px;
+    padding:0 18px;
+    border-radius:11px;
+    background:var(--gold);
+    color:var(--navy);
+    font-size:12px;
+    font-weight:800;
+    border:0;
+    transition:.25s;
+}
+
+.btn-small:hover{
+    transform:translateY(-2px);
+    background:var(--gold-light);
+}
+
+.menu-btn{
+    display:none;
+    width:44px;
+    height:44px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    background:rgba(255,255,255,.05);
+    color:#fff;
+    font-size:18px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:760px;
+    background:
+        radial-gradient(circle at 78% 28%,rgba(216,173,98,.13),transparent 26%),
+        radial-gradient(circle at 10% 85%,rgba(40,106,180,.15),transparent 30%),
+        var(--navy);
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    border:1px solid rgba(216,173,98,.10);
+    left:-250px;
+    top:120px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.05);
+    right:-190px;
+    bottom:-150px;
+}
+
+.hero-inner{
+    min-height:760px;
+    display:grid;
+    grid-template-columns:.92fr 1.08fr;
+    align-items:center;
+    gap:65px;
+    padding-top:105px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-copy{
+    max-width:570px;
+}
+
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:7px 12px;
+    border-radius:100px;
+    border:1px solid rgba(216,173,98,.24);
+    background:rgba(216,173,98,.06);
+    color:var(--gold-light);
+    font-size:11px;
+    margin-bottom:20px;
+}
+
+.hero-eyebrow i{
+    font-size:8px;
+}
+
+.hero h1{
+    font-size:clamp(38px,5vw,66px);
+    line-height:1.15;
+    letter-spacing:-2px;
+    font-weight:900;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-description{
+    color:rgba(255,255,255,.66);
+    font-size:16px;
+    line-height:2;
+    max-width:500px;
+    margin-bottom:31px;
+}
+
+.hero-buttons{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    min-height:52px;
+    padding:0 23px;
+    border-radius:13px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    border:1px solid transparent;
+    font-size:13px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:var(--navy);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(216,173,98,.18);
+}
+
+.btn-outline{
+    color:#fff;
+    border-color:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.04);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.09);
+    transform:translateY(-3px);
+}
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-image{
+    position:relative;
+    height:530px;
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    background:#0d1c2e;
+    box-shadow:var(--shadow-dark);
+}
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        rgba(7,17,31,0) 50%,
+        rgba(7,17,31,.35)
+    );
+    pointer-events:none;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.hero-info{
+    position:absolute;
+    right:25px;
+    bottom:25px;
+    left:25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:17px 19px;
+    border-radius:17px;
+    background:rgba(7,17,31,.78);
+    border:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(16px);
+    z-index:3;
+}
+
+.hero-info strong{
+    display:block;
+    font-size:13px;
+}
+
+.hero-info span{
+    color:rgba(255,255,255,.55);
+    font-size:10px;
+}
+
+.hero-number{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:rgba(216,173,98,.12);
+    color:var(--gold-light);
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    padding:105px 0;
+}
+
+.section-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:42px;
+}
+
+.section-title-wrap{
+    max-width:650px;
+}
+
+.section-kicker{
+    color:#a68145;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.4px;
+    margin-bottom:8px;
+}
+
+.section-title{
+    color:var(--navy);
+    font-size:clamp(27px,3vw,39px);
+    line-height:1.35;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.section-description{
+    color:var(--muted);
+    font-size:13px;
+    max-width:480px;
+    line-height:2;
+}
+
+.section-action{
+    min-width:max-content;
+}
+
+/* =========================================================
+   COURSES
+========================================================= */
+
+.courses{
+    background:#fff;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.course-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow);
+    border-color:#dfe2e7;
+}
+
+.course-image{
+    height:245px;
+    overflow:hidden;
+    background:#edf0f3;
+}
+
+.course-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.course-card:hover .course-image img{
+    transform:scale(1.04);
+}
+
+.course-body{
+    padding:24px;
+}
+
+.course-number{
+    color:#b48b4b;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.course-body h3{
+    color:var(--navy);
+    font-size:18px;
+    margin-bottom:9px;
+}
+
+.course-body p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:2;
+}
+
+/* =========================================================
+   ABOUT / STATS
+========================================================= */
+
+.about{
+    background:#f3f5f7;
+}
+
+.about-layout{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:65px;
+    align-items:center;
+}
+
+.about-content p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:2.15;
+    margin-top:20px;
+}
+
+.about-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:28px;
+}
+
+.about-item{
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+}
+
+.about-item i{
+    color:#a77e3e;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.about-item strong{
+    display:block;
+    color:var(--navy);
+    font-size:13px;
+}
+
+.about-item span{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-top:2px;
+}
+
+.about-visual{
+    position:relative;
+}
+
+.about-panel{
+    background:var(--navy);
+    border-radius:28px;
+    padding:28px;
+    color:#fff;
+    box-shadow:var(--shadow-dark);
+}
+
+.about-panel-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.about-panel-label{
+    font-size:10px;
+    color:rgba(255,255,255,.5);
+}
+
+.about-panel-icon{
+    width:44px;
+    height:44px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:rgba(216,173,98,.1);
+    color:var(--gold);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.stat{
+    padding:19px 10px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    text-align:center;
+    background:rgba(255,255,255,.03);
+}
+
+.stat strong{
+    display:block;
+    color:var(--gold-light);
+    font-size:25px;
+    line-height:1;
+}
+
+.stat span{
+    color:rgba(255,255,255,.52);
+    font-size:9px;
+    margin-top:8px;
+    display:block;
+}
+
+/* =========================================================
+   COACH
+========================================================= */
+
+.coach{
+    background:#fff;
+}
+
+.coach-card{
+    display:grid;
+    grid-template-columns:390px 1fr;
+    min-height:450px;
+    border:1px solid var(--line);
+    border-radius:28px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:var(--shadow);
+}
+
+.coach-image{
+    background:#e9edf0;
+    min-height:450px;
+}
+
+.coach-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+}
+
+.coach-content{
+    padding:48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.coach-tag{
+    display:inline-flex;
+    align-self:flex-start;
+    padding:6px 11px;
+    border-radius:8px;
+    background:#f5f0e7;
+    color:#987338;
+    font-size:10px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.coach-content h3{
+    font-size:29px;
+    color:var(--navy);
+    margin-bottom:6px;
+}
+
+.coach-role{
+    color:#a17c43;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:24px;
+}
+
+.coach-history{
+    display:grid;
+    gap:10px;
+}
+
+.history-row{
+    display:grid;
+    grid-template-columns:95px 1fr;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.history-row:last-child{
+    border-bottom:0;
+}
+
+.history-year{
+    color:#a47d42;
+    font-size:11px;
+    font-weight:800;
+}
+
+.history-team{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================================================
+   FEATURE MENU / HIDDEN CONTENT
+========================================================= */
+
+.feature-section{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+}
+
+.feature-section::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    border:1px solid rgba(216,173,98,.07);
+    left:-300px;
+    top:-260px;
+}
+
+.feature-section .section-title{
+    color:#fff;
+}
+
+.feature-section .section-description{
+    color:rgba(255,255,255,.54);
+}
+
+.feature-menu{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    position:relative;
+    z-index:2;
+}
+
+.feature-btn{
+    min-height:165px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.09);
+    background:rgba(255,255,255,.035);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-between;
+    padding:23px;
+    text-align:right;
+    transition:.3s;
+}
+
+.feature-btn:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.065);
+    border-color:rgba(216,173,98,.3);
+}
+
+.feature-icon{
+    width:45px;
+    height:45px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:rgba(216,173,98,.09);
+    color:var(--gold-light);
+    font-size:17px;
+}
+
+.feature-btn h3{
+    font-size:14px;
+    margin-top:18px;
+}
+
+.feature-btn p{
+    color:rgba(255,255,255,.43);
+    font-size:10px;
+    margin-top:2px;
+}
+
+.feature-arrow{
+    align-self:flex-end;
+    color:rgba(255,255,255,.32);
+}
+
+/* =========================================================
+   SPONSOR
+========================================================= */
+
+.sponsor{
+    background:#f3f5f7;
+}
+
+.sponsor-box{
+    min-height:180px;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:26px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:35px;
+    padding:32px 38px;
+}
+
+.sponsor-brand{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.sponsor-logo{
+    width:120px;
+    height:85px;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    background:#fafafa;
+    border:1px solid var(--line);
+    padding:12px;
+}
+
+.sponsor-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.sponsor-copy h3{
+    font-size:17px;
+    color:var(--navy);
+    margin-bottom:4px;
+}
+
+.sponsor-copy p{
+    font-size:11px;
+    color:var(--muted);
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.cta{
+    padding:85px 0;
+    background:#fff;
+}
+
+.cta-box{
+    background:
+        radial-gradient(circle at 85% 15%,rgba(216,173,98,.12),transparent 25%),
+        var(--navy);
+    color:#fff;
+    border-radius:28px;
+    padding:55px 60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.cta-box h2{
+    font-size:29px;
+    margin-bottom:7px;
+}
+
+.cta-box p{
+    color:rgba(255,255,255,.52);
+    font-size:12px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    background:#050d17;
+    color:#fff;
+    padding:75px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.35fr .8fr .9fr 1.2fr;
+    gap:50px;
+    padding-bottom:50px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand{
+    max-width:300px;
+}
+
+.footer-brand-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.footer-brand-logo img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+.footer-brand-logo strong{
+    font-size:14px;
+}
+
+.footer-brand p{
+    color:rgba(255,255,255,.42);
+    font-size:11px;
+    line-height:2;
+}
+
+.footer-column h4{
+    font-size:12px;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.footer-column ul{
+    list-style:none;
+    display:grid;
+    gap:9px;
+}
+
+.footer-column li,
+.footer-column a{
+    color:rgba(255,255,255,.45);
+    font-size:10px;
+    transition:.2s;
+}
+
+.footer-column a:hover{
+    color:var(--gold-light);
+}
+
+.footer-contact{
+    display:grid;
+    gap:13px;
+}
+
+.footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    color:rgba(255,255,255,.45);
+    font-size:10px;
+}
+
+.footer-contact-item i{
+    color:var(--gold);
+    margin-top:4px;
+    width:13px;
+}
+
+.socials{
+    display:flex;
+    gap:7px;
+    margin-top:18px;
+}
+
+.social{
+    width:35px;
+    height:35px;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.09);
+    color:rgba(255,255,255,.55);
+    transition:.2s;
+}
+
+.social:hover{
+    color:var(--gold-light);
+    border-color:rgba(216,173,98,.3);
+}
+
+.footer-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding-top:23px;
+    color:rgba(255,255,255,.28);
+    font-size:9px;
+}
+
+.designer a{
+    color:var(--gold);
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(2,8,15,.78);
+    backdrop-filter:blur(12px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(920px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:27px;
+    box-shadow:0 30px 100px rgba(0,0,0,.3);
+    position:relative;
+    animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.modal-head{
+    padding:25px 28px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(10px);
+    z-index:3;
+}
+
+.modal-head h2{
+    color:var(--navy);
+    font-size:18px;
+}
+
+.modal-head p{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:2px;
+}
+
+.close-modal{
+    width:38px;
+    height:38px;
+    border:0;
+    background:#f2f3f5;
+    color:#66707c;
+    border-radius:11px;
+    font-size:16px;
+}
+
+.modal-body{
+    padding:28px;
+}
+
+/* =========================================================
+   PLAYER MODAL
+========================================================= */
+
+.player-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.player-card{
+    border:1px solid var(--line);
+    border-radius:17px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.player-photo{
+    height:190px;
+    background:#edf0f3;
+}
+
+.player-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.player-info{
+    padding:13px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.player-info strong{
+    color:var(--navy);
+    font-size:11px;
+}
+
+.player-number{
+    color:#a27c43;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* =========================================================
+   MATCH MODAL
+========================================================= */
+
+.match-tabs{
+    display:flex;
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.match-tab{
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:10px;
+    padding:9px 15px;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.match-tab.active{
+    background:var(--navy);
+    color:#fff;
+    border-color:var(--navy);
+}
+
+.match-table{
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.match-row{
+    display:grid;
+    grid-template-columns:1fr 1.5fr 1fr 1.4fr;
+    align-items:center;
+    min-height:60px;
+    padding:0 18px;
+    border-bottom:1px solid var(--line);
+    gap:15px;
+}
+
+.match-row:last-child{
+    border-bottom:0;
+}
+
+.match-row.head{
+    min-height:45px;
+    background:#f6f7f8;
+    color:#7b8490;
+    font-size:10px;
+}
+
+.match-row:not(.head){
+    font-size:11px;
+    color:var(--text);
+}
+
+.match-result{
+    font-weight:800;
+}
+
+/* =========================================================
+   KITS MODAL
+========================================================= */
+
+.kit-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.kit-card{
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.kit-image{
+    height:390px;
+    background:#f1f3f5;
+}
+
+.kit-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:20px;
+}
+
+.kit-info{
+    padding:17px 19px;
+    border-top:1px solid var(--line);
+}
+
+.kit-info h3{
+    color:var(--navy);
+    font-size:14px;
+}
+
+.kit-info p{
+    color:var(--muted);
+    font-size:10px;
+}
+
+/* =========================================================
+   GALLERY MODAL
+========================================================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.gallery-item{
+    height:170px;
+    border-radius:13px;
+    overflow:hidden;
+    background:#edf0f2;
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+/* =========================================================
+   CONTACT MODAL
+========================================================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.contact-card{
+    padding:22px;
+    border:1px solid var(--line);
+    border-radius:17px;
+    background:#fff;
+}
+
+.contact-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#f5f0e7;
+    color:#a17b43;
+    display:grid;
+    place-items:center;
+    margin-bottom:15px;
+}
+
+.contact-card h3{
+    color:var(--navy);
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+.contact-card p,
+.contact-card a{
+    color:var(--muted);
+    font-size:10px;
+    line-height:1.9;
+}
+
+/* =========================================================
+   REGISTRATION
+========================================================= */
+
+.registration-box{
+    width:min(570px,100%);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    color:#4f5965;
+    font-size:10px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    height:48px;
+    border:1px solid #e0e3e7;
+    background:#fafbfc;
+    border-radius:11px;
+    padding:0 13px;
+    outline:none;
+    color:var(--text);
+    font-size:11px;
+    transition:.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#c3a16a;
+    background:#fff;
+    box-shadow:0 0 0 3px rgba(195,161,106,.08);
+}
+
+.form-note{
+    margin-top:17px;
+    padding:12px 14px;
+    background:#f7f7f7;
+    border-radius:11px;
+    color:var(--muted);
+    font-size:9px;
+    line-height:1.9;
+}
+
+.form-submit{
+    width:100%;
+    margin-top:18px;
+}
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(0,0,0,.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:min(1100px,95vw);
+    max-height:88vh;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.lightbox-close{
+    position:absolute;
+    top:25px;
+    left:25px;
+    width:43px;
+    height:43px;
+    border:0;
+    border-radius:12px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    font-size:18px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .main-nav{
+        gap:0;
+    }
+
+    .main-nav a{
+        padding:8px 8px;
+        font-size:11px;
+    }
+
+    .feature-menu{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .player-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:800px){
+
+    .container{
+        width:min(var(--container),calc(100% - 28px));
+    }
+
+    .site-header{
+        padding:10px 0;
+    }
+
+    .header-inner{
+        min-height:61px;
+    }
+
+    .main-nav{
+        position:absolute;
+        top:calc(100% + 8px);
+        right:0;
+        left:0;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:10px;
+        border-radius:17px;
+        background:rgba(7,17,31,.97);
+        border:1px solid rgba(255,255,255,.08);
+        box-shadow:var(--shadow-dark);
+    }
+
+    .main-nav.open{
+        display:flex;
+    }
+
+    .main-nav a{
+        padding:12px;
+    }
+
+    .header-action{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero,
+    .hero-inner{
+        min-height:auto;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:35px;
+        padding-top:135px;
+        padding-bottom:65px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero-image{
+        height:430px;
+    }
+
+    .section{
+        padding:75px 0;
+    }
+
+    .section-head{
+        display:block;
+        margin-bottom:30px;
+    }
+
+    .section-action{
+        margin-top:18px;
+    }
+
+    .course-grid{
+        grid-template-columns:1fr;
+    }
+
+    .course-image{
+        height:240px;
+    }
+
+    .about-layout{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .coach-card{
+        grid-template-columns:1fr;
+    }
+
+    .coach-image{
+        height:390px;
+        min-height:0;
+    }
+
+    .coach-content{
+        padding:30px;
+    }
+
+    .feature-menu{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .sponsor-box{
+        display:block;
+        padding:25px;
+    }
+
+    .sponsor-brand{
+        margin-bottom:22px;
+    }
+
+    .cta-box{
+        display:block;
+        padding:40px 28px;
+    }
+
+    .cta-box .btn{
+        margin-top:22px;
+    }
+
+    .player-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .match-row{
+        grid-template-columns:1fr 1.3fr .7fr;
+    }
+
+    .match-row > div:last-child{
+        display:none;
+    }
+}
+
+@media(max-width:520px){
+
+    .brand-text span{
+        display:none;
+    }
+
+    .brand img{
+        width:40px;
+        height:40px;
+    }
+
+    .hero h1{
+        font-size:36px;
+        letter-spacing:-1px;
+    }
+
+    .hero-description{
+        font-size:13px;
+    }
+
+    .hero-image{
+        height:370px;
+        border-radius:22px;
+    }
+
+    .hero-info{
+        right:13px;
+        left:13px;
+        bottom:13px;
+    }
+
+    .hero-buttons{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .about-list{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .feature-menu{
+        grid-template-columns:1fr;
+    }
+
+    .feature-btn{
+        min-height:130px;
+    }
+
+    .sponsor-brand{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .sponsor-logo{
+        width:110px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .player-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .player-photo{
+        height:160px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item{
+        height:135px;
+    }
+
+    .modal{
+        padding:10px;
+    }
+
+    .modal-body{
+        padding:17px;
+    }
+
+    .modal-head{
+        padding:18px;
+    }
 }
 </style>
 </head>
+
 <body>
 
-<header>
-<div class="container">
-<nav class="nav glass">
-<a class="brand" href="#home"><img src="images/logo.png" alt="لوگوی آکادمی والیبال هفت‌خان"><span>آکادمی والیبال هفت‌خان<small>مسیر قهرمانی</small></span></a>
-<div class="navlinks">
-<a href="#academy">آکادمی</a><a href="#courses">دوره‌ها</a><a href="#u16">U16</a><a href="#matches">مسابقات</a><a href="#gallery">گالری</a><a href="#sponsor">اسپانسر</a><a href="#contact">تماس</a>
-</div>
-<button class="btn primary" onclick="openModal('registerModal')">ثبت‌نام</button>
-<button class="menu" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
-</nav>
-</div>
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header" id="header">
+    <div class="container">
+        <div class="header-inner">
+
+            <a href="#home" class="brand">
+                <img src="images/logo.png" alt="لوگوی آکادمی والیبال هفت‌خان">
+                <div class="brand-text">
+                    <strong>آکادمی والیبال هفت‌خان</strong>
+                    <span>Volleyball Academy</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="#home">خانه</a>
+                <a href="#academy">آکادمی</a>
+                <a href="#courses">دوره‌ها</a>
+                <a href="#coach">مربی</a>
+                <a href="#team">تیم U16</a>
+                <a href="#more">امکانات</a>
+                <a href="#contact">تماس</a>
+            </nav>
+
+            <div class="header-action">
+                <button class="btn-small" onclick="openModal('registerModal')">
+                    ثبت‌نام
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <button class="menu-btn" id="menuBtn" aria-label="منو">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+    </div>
 </header>
 
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
 <main>
+
 <section class="hero" id="home">
-<div class="container hero-grid">
-<div class="hero-copy">
-<div class="tag"><i class="fa-solid fa-bolt"></i> آکادمی والیبال هفت‌خان</div>
-<h1>استعدادت را<br><span>قهرمان کن.</span></h1>
-<p class="hero-lead">آموزش اصولی، استعدادیابی و ساختن بازیکنانی که برای زمین مسابقه آماده‌اند؛ از اولین پاس تا بالاترین سطح رقابت.</p>
-<div class="actions"><button class="btn primary" onclick="openModal('registerModal')">شروع مسیر قهرمانی <i class="fa-solid fa-arrow-left"></i></button><a class="btn secondary" href="#u16">تیم U16 را ببین</a></div>
-<div class="stats"><div><strong>U16</strong><span>تیم رقابتی</span></div><div><strong>۳</strong><span>سطح آموزشی</span></div><div><strong>۷خان</strong><span>یک مسیر، یک هدف</span></div></div>
-</div>
-<div class="hero-photo">
-<div class="slide active" style="--image:url('images/1.jpg')"><img src="images/1.jpg" alt="تمرین والیبال"></div>
-<div class="slide" style="--image:url('images/2.jpg')"><img src="images/2.jpg" alt="تیم هفت‌خان"></div>
-<div class="slide" style="--image:url('images/3.jpg')"><img src="images/3.jpg" alt="بازیکنان آکادمی"></div>
-<div class="hero-caption"><b>از تمرین تا مسابقه</b><span>فضایی برای رشد، رقابت و ساختن شخصیت ورزشی</span></div>
-<div class="dots"><button class="dot active"></button><button class="dot"></button><button class="dot"></button></div>
-</div>
-</div>
+
+    <div class="container hero-inner">
+
+        <div class="hero-copy">
+
+            <div class="hero-eyebrow">
+                <i class="fa-solid fa-circle"></i>
+                آکادمی تخصصی والیبال
+            </div>
+
+            <h1>
+                جایی برای ساختن
+                <span>نسل بعدی قهرمانان</span>
+            </h1>
+
+            <p class="hero-description">
+                آموزش اصولی، استعدادیابی و تمرین هدفمند برای بازیکنانی
+                که می‌خواهند والیبال را جدی‌تر دنبال کنند.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openModal('registerModal')">
+                    شروع ثبت‌نام
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <a href="#courses" class="btn btn-outline">
+                    مشاهده دوره‌ها
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="hero-image">
+                <img
+                    src="images/1.jpg"
+                    alt="تمرین بازیکنان آکادمی والیبال هفت‌خان"
+                >
+
+                <div class="hero-info">
+                    <div>
+                        <strong>آموزش و پرورش استعداد</strong>
+                        <span>از پایه تا سطح پیشرفته</span>
+                    </div>
+
+                    <div class="hero-number">
+                        <i class="fa-solid fa-volleyball"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<div class="intro"><div class="container intro-row"><span><i class="fa-solid fa-circle"></i> آموزش تخصصی</span><span><i class="fa-solid fa-circle"></i> استعدادیابی</span><span><i class="fa-solid fa-circle"></i> تیم U16</span><span><i class="fa-solid fa-circle"></i> آمادگی مسابقات</span></div></div>
 
-<section class="section" id="academy">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">ACADEMY</div><h2>اینجا فقط والیبال یاد نمی‌گیری.</h2></div><p>هفت‌خان برای ساختن بازیکن کامل طراحی شده؛ تکنیک، تاکتیک، آمادگی بدنی و ذهنیت رقابتی کنار هم قرار می‌گیرند.</p></div>
-<div class="about">
-<div class="about-card glass"><h3>یک مسیر واقعی برای پیشرفت</h3><p>تمرین‌ها هدفمند و مرحله‌ای هستند تا بازیکن از پایه‌های درست شروع کند و قدم‌به‌قدم برای سطح بالاتر و مسابقه آماده شود.</p><div class="checks"><div class="check"><i class="fa-solid fa-check"></i> آموزش تکنیک‌های پایه</div><div class="check"><i class="fa-solid fa-check"></i> تاکتیک و بازی تیمی</div><div class="check"><i class="fa-solid fa-check"></i> آمادگی مسابقات</div><div class="check"><i class="fa-solid fa-check"></i> استعدادیابی و رشد</div></div></div>
-<div class="about-card glass"><div class="eyebrow">PHILOSOPHY</div><h3>هفت‌خان یعنی عبور از هر مرحله.</h3><p>قهرمانی نتیجه یک روز نیست؛ نتیجه استمرار، نظم، تمرین درست و قرار گرفتن در محیطی است که بازیکن را به چالش می‌کشد.</p></div>
-</div>
-</div>
+<!-- ======================================================
+     COURSES
+====================================================== -->
+
+<section class="section courses" id="courses">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-title-wrap">
+                <div class="section-kicker">دوره‌های آموزشی</div>
+                <h2 class="section-title">
+                    مسیر مناسب برای هر سطح
+                </h2>
+            </div>
+
+            <div class="section-description">
+                برنامه تمرینی متناسب با سطح بازیکن، از شروع اصولی تا آمادگی حرفه‌ای.
+            </div>
+
+        </div>
+
+        <div class="course-grid">
+
+            <article class="course-card">
+
+                <div class="course-image">
+                    <img src="images/beginner.jpg" alt="دوره مبتدی">
+                </div>
+
+                <div class="course-body">
+                    <div class="course-number">01 / BEGINNER</div>
+                    <h3>دوره مبتدی</h3>
+                    <p>
+                        آموزش پایه والیبال شامل سرویس، پاس و کنترل توپ
+                        برای شروع اصولی.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-image">
+                    <img src="images/intermediate.jpg" alt="دوره نیمه پیشرفته">
+                </div>
+
+                <div class="course-body">
+                    <div class="course-number">02 / INTERMEDIATE</div>
+                    <h3>نیمه پیشرفته</h3>
+                    <p>
+                        تقویت تکنیک‌ها، تاکتیک‌های تیمی و افزایش سرعت و کیفیت بازی.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-image">
+                    <img src="images/advanced.jpg" alt="دوره پیشرفته">
+                </div>
+
+                <div class="course-body">
+                    <div class="course-number">03 / ADVANCED</div>
+                    <h3>دوره پیشرفته</h3>
+                    <p>
+                        تمرینات حرفه‌ای، آمادگی مسابقات و حرکت به سمت
+                        سطح رقابتی.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section" id="courses">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">TRAINING</div><h2>دوره‌ای متناسب با سطح تو</h2></div><p>از شروع اصولی تا تمرین حرفه‌ای، مسیر آموزشی خودت را انتخاب کن.</p></div>
-<div class="courses">
-<article class="course glass"><div class="course-img"><img src="images/beginner.jpg" alt="دوره مبتدی"></div><div class="course-body"><h3>دوره مبتدی</h3><p>آموزش پایه والیبال شامل سرویس، پاس و کنترل توپ برای شروع اصولی.</p><button class="btn primary" onclick="openModal('registerModal')">انتخاب دوره</button></div></article>
-<article class="course glass"><div class="course-img"><img src="images/intermediate.jpg" alt="دوره نیمه پیشرفته"></div><div class="course-body"><h3>نیمه پیشرفته</h3><p>تقویت تکنیک‌ها، تاکتیک‌های تیمی و افزایش سرعت بازی.</p><button class="btn primary" onclick="openModal('registerModal')">انتخاب دوره</button></div></article>
-<article class="course glass"><div class="course-img"><img src="images/advanced.jpg" alt="دوره پیشرفته"></div><div class="course-body"><h3>دوره پیشرفته</h3><p>تمرینات حرفه‌ای، آمادگی مسابقات و رسیدن به سطح قهرمانی.</p><button class="btn primary" onclick="openModal('registerModal')">انتخاب دوره</button></div></article>
-</div>
-</div>
+
+<!-- ======================================================
+     ACADEMY
+====================================================== -->
+
+<section class="section about" id="academy">
+
+    <div class="container about-layout">
+
+        <div class="about-content">
+
+            <div class="section-kicker">آکادمی</div>
+
+            <h2 class="section-title">
+                تمرین درست، مسیر درست
+            </h2>
+
+            <p>
+                آکادمی والیبال هفت‌خان با تمرکز بر آموزش اصولی،
+                توسعه مهارت‌های فردی و کار تیمی فعالیت می‌کند.
+                هدف مجموعه، ساختن محیطی حرفه‌ای برای رشد بازیکنان
+                در سنین و سطوح مختلف است.
+            </p>
+
+            <div class="about-list">
+
+                <div class="about-item">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <strong>تمرین هدفمند</strong>
+                    <span>برنامه متناسب با سطح بازیکن</span>
+                </div>
+
+                <div class="about-item">
+                    <i class="fa-solid fa-person-running"></i>
+                    <strong>استعدادیابی</strong>
+                    <span>شناسایی و پرورش استعدادها</span>
+                </div>
+
+                <div class="about-item">
+                    <i class="fa-solid fa-people-group"></i>
+                    <strong>کار تیمی</strong>
+                    <span>توسعه هماهنگی و تاکتیک</span>
+                </div>
+
+                <div class="about-item">
+                    <i class="fa-solid fa-trophy"></i>
+                    <strong>مسابقات</strong>
+                    <span>آمادگی برای رقابت‌های واقعی</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-visual">
+
+            <div class="about-panel">
+
+                <div class="about-panel-top">
+                    <div>
+                        <div class="about-panel-label">ACADEMY PROFILE</div>
+                    </div>
+
+                    <div class="about-panel-icon">
+                        <i class="fa-solid fa-volleyball"></i>
+                    </div>
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>U16</strong>
+                        <span>تیم نوجوانان</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>۳</strong>
+                        <span>سطح آموزشی</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>۷</strong>
+                        <span>هفت‌خان</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section">
-<div class="container">
-<div class="coach glass">
-<div class="coach-img"><img src="images/coach.jpg" alt="آقای بیژن براتی"></div>
-<div class="coach-info"><div class="eyebrow">HEAD COACH</div><h3>آقای بیژن براتی</h3><div class="role">مربی رسمی فدراسیون جهانی والیبال (FIVB)</div><p>تجربه ملی و نگاه حرفه‌ای در کنار آموزش مرحله‌ای، پایه فنی بازیکنان هفت‌خان را شکل می‌دهد.</p><div class="history"><div><b>2013 - 2015</b> تیم ملی نوجوانان ایران</div><div><b>2015 - 2017</b> تیم ملی جوانان ایران</div><div><b>2016 - 2018</b> تیم ملی نظامیان ایران</div></div></div>
-</div>
-</div>
+
+<!-- ======================================================
+     COACH
+====================================================== -->
+
+<section class="section coach" id="coach">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-title-wrap">
+                <div class="section-kicker">کادر فنی</div>
+                <h2 class="section-title">
+                    تجربه در کنار آموزش
+                </h2>
+            </div>
+
+            <div class="section-description">
+                هدایت تمرینات با تکیه بر تجربه مربیگری و ساختار حرفه‌ای.
+            </div>
+
+        </div>
+
+
+        <div class="coach-card">
+
+            <div class="coach-image">
+                <img
+                    src="images/coach.jpg"
+                    alt="آقای بیژن براتی"
+                >
+            </div>
+
+            <div class="coach-content">
+
+                <div class="coach-tag">
+                    کادر فنی آکادمی
+                </div>
+
+                <h3>آقای بیژن براتی</h3>
+
+                <div class="coach-role">
+                    مربی رسمی فدراسیون جهانی والیبال (FIVB)
+                </div>
+
+                <div class="coach-history">
+
+                    <div class="history-row">
+                        <div class="history-year">2013 - 2015</div>
+                        <div class="history-team">
+                            تیم ملی نوجوانان ایران
+                        </div>
+                    </div>
+
+                    <div class="history-row">
+                        <div class="history-year">2015 - 2017</div>
+                        <div class="history-team">
+                            تیم ملی جوانان ایران
+                        </div>
+                    </div>
+
+                    <div class="history-row">
+                        <div class="history-year">2016 - 2018</div>
+                        <div class="history-team">
+                            تیم ملی نظامیان ایران
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section" id="u16">
-<div class="container">
-<div class="u16 glass"><div><div class="eyebrow">U16 TEAM</div><h3>نسل بعدی هفت‌خان</h3><p>تیم زیر ۱۶ سال با هدف پرورش استعدادهای جوان و آماده‌سازی بازیکنان برای رقابت‌های حرفه‌ای فعالیت می‌کند.</p></div><button class="btn primary" onclick="openModal('playersModal')">مشاهده بازیکنان <i class="fa-solid fa-users"></i></button></div>
-</div>
+
+<!-- ======================================================
+     TEAM / MORE
+====================================================== -->
+
+<section class="section feature-section" id="team">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-title-wrap">
+                <div class="section-kicker">دسترسی سریع</div>
+                <h2 class="section-title">
+                    اطلاعات تیم و آکادمی
+                </h2>
+            </div>
+
+            <div class="section-description">
+                جزئیات بیشتر را از طریق بخش‌های زیر ببینید؛
+                صفحه اصلی عمداً خلوت نگه داشته شده است.
+            </div>
+
+        </div>
+
+
+        <div class="feature-menu">
+
+            <button class="feature-btn" onclick="openModal('playersModal')">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <div>
+                    <h3>اعضای تیم U16</h3>
+                    <p>مشاهده فهرست بازیکنان</p>
+                </div>
+
+                <div class="feature-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+
+            </button>
+
+
+            <button class="feature-btn" onclick="openModal('matchesModal')">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <h3>مسابقات</h3>
+                    <p>برنامه و نتایج تیم</p>
+                </div>
+
+                <div class="feature-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+
+            </button>
+
+
+            <button class="feature-btn" onclick="openModal('kitsModal')">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+
+                <div>
+                    <h3>کیت تیم</h3>
+                    <p>مشاهده لباس‌های مسابقه</p>
+                </div>
+
+                <div class="feature-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+
+            </button>
+
+
+            <button class="feature-btn" onclick="openModal('galleryModal')">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-images"></i>
+                </div>
+
+                <div>
+                    <h3>گالری</h3>
+                    <p>تصاویر تمرین و مسابقات</p>
+                </div>
+
+                <div class="feature-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+
+            </button>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section" id="matches">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">MATCH CENTER</div><h2>تقویم رقابت‌ها</h2></div><p>برنامه و نتایج ثبت‌شده تیم هفت‌خان.</p></div>
-<div class="matches">
-<div class="matchbox glass"><h3><i class="fa-regular fa-calendar"></i> برنامه مسابقات</h3>
-<div class="match"><div>هفت‌خان<br><small>1405/03/30</small></div><div class="score">09:00</div><div style="text-align:left">آکادمی مهر شمیران<br><small>سالن خانه والیبال</small></div></div>
-<div class="match"><div>هفت‌خان<br><small>به‌زودی</small></div><div class="score">---</div><div style="text-align:left">حریف بعدی<br><small>زمان متعاقباً اعلام می‌شود</small></div></div>
-</div>
-<div class="matchbox glass"><h3><i class="fa-solid fa-trophy"></i> نتایج</h3>
-<div class="match"><div>هفت‌خان<br><small>1405/03/30</small></div><div class="score">0 - 2 ❌</div><div style="text-align:left">آکادمی مهر شمیران</div></div>
-<div class="match"><div>هفت‌خان<br><small>---</small></div><div class="score">---</div><div style="text-align:left">نتیجه بعدی</div></div>
-</div>
-</div>
-</div>
+
+<!-- ======================================================
+     SPONSOR
+====================================================== -->
+
+<section class="section sponsor" id="sponsor">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-title-wrap">
+                <div class="section-kicker">حامی مجموعه</div>
+                <h2 class="section-title">
+                    حمایت از مسیر رشد
+                </h2>
+            </div>
+
+            <div class="section-description">
+                با سپاس از مجموعه‌ای که در مسیر رشد تیم و آکادمی همراه ماست.
+            </div>
+
+        </div>
+
+
+        <div class="sponsor-box">
+
+            <div class="sponsor-brand">
+
+                <div class="sponsor-logo">
+                    <img
+                        src="images/sponsor1.png"
+                        alt="روژین‌تاک"
+                    >
+                </div>
+
+                <div class="sponsor-copy">
+                    <h3>روژین‌تاک</h3>
+                    <p>
+                        حامی رسمی آکادمی والیبال هفت‌خان و تیم زیر ۱۶ سال
+                    </p>
+                </div>
+
+            </div>
+
+            <a
+                class="btn btn-outline"
+                style="color:var(--navy);border-color:var(--line);"
+                href="https://rojintak.com/"
+                target="_blank"
+                rel="noopener"
+            >
+                مشاهده وب‌سایت
+                <i class="fa-solid fa-arrow-up-left-from-circle"></i>
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section" id="sponsor">
-<div class="container">
-<div class="sponsor glass"><img src="images/sponsor1.png" alt="روژین‌تاک"><div><div class="eyebrow">OFFICIAL SPONSOR</div><h3>روژین‌تاک</h3><p>تولیدات کشت و صنعت روژین‌تاک؛ حامی رسمی آکادمی والیبال هفت‌خان و تیم زیر ۱۶ سال.</p></div><a class="btn primary" href="https://rojintak.com/" target="_blank" rel="noopener">وب‌سایت اسپانسر <i class="fa-solid fa-arrow-left"></i></a></div>
-</div>
+
+<!-- ======================================================
+     CTA
+====================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div>
+                <h2>آماده شروع هستی؟</h2>
+                <p>
+                    دوره مناسب خودت را انتخاب کن و برای ثبت‌نام اقدام کن.
+                </p>
+            </div>
+
+            <button
+                class="btn btn-primary"
+                onclick="openModal('registerModal')"
+            >
+                ثبت‌نام در آکادمی
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="section">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">TEAM KITS</div><h2>استایل تیم</h2></div><p>کیت‌های رسمی مسابقه آکادمی هفت‌خان.</p></div>
-<div class="kits"><div class="kit glass"><img src="images/kit-home.jpg" alt="کیت مسابقه اول"><div class="kit-info"><h3>کیت مسابقه اول</h3><p>لباس اول رسمی تیم آکادمی والیبال هفت‌خان</p></div></div><div class="kit glass"><img src="images/kit-away.jpg" alt="کیت مسابقه دوم"><div class="kit-info"><h3>کیت مسابقه دوم</h3><p>لباس دوم رسمی تیم آکادمی والیبال هفت‌خان</p></div></div></div>
-</div>
-</section>
-
-<section class="section" id="gallery">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">GALLERY</div><h2>لحظه‌های هفت‌خان</h2></div><p>تمرین، تیم، رقابت و مسیر قهرمانی.</p></div>
-<div class="gallery">
-<a onclick="lightbox(this)"><img src="images/g1.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g2.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g3.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g4.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g5.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g6.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g7.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g8.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g9.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g10.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g11.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g12.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g13.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g14.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g15.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g16.jpg" alt=""></a><a onclick="lightbox(this)"><img src="images/g17.jpg" alt=""></a>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="container"><div class="final-cta"><div class="eyebrow">READY TO PLAY?</div><h2>مسیر قهرمانی را از همین‌جا شروع کن.</h2><p>برای آشنایی با دوره‌ها و انتخاب برنامه مناسب، ثبت‌نام آنلاین را شروع کن.</p><button class="btn secondary" onclick="openModal('registerModal')">ثبت‌نام در آکادمی <i class="fa-solid fa-arrow-left"></i></button></div></div>
-</section>
 </main>
 
-<footer id="contact" class="footer">
-<div class="container">
-<div class="footer-grid">
-<div><a class="brand" href="#home"><img src="images/logo.png" alt=""><span>آکادمی والیبال هفت‌خان<small>مسیر قهرمانی</small></span></a><p style="margin-top:15px">آموزش، استعدادپروری و ساختن نسل جدید والیبال.</p><div class="socials"><a href="https://instagram.com/7khan_volleyballclub" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://t.me/bijanbarati" target="_blank"><i class="fa-brands fa-telegram"></i></a></div></div>
-<div><h4>دسترسی سریع</h4><ul><li><a href="#academy">آکادمی</a></li><li><a href="#courses">دوره‌ها</a></li><li><a href="#u16">تیم U16</a></li><li><a href="#matches">مسابقات</a></li><li><a href="#gallery">گالری</a></li></ul></div>
-<div><h4>خدمات</h4><ul><li>آموزش مبتدی</li><li>آموزش نیمه پیشرفته</li><li>آموزش پیشرفته</li><li>استعدادیابی</li><li>آمادگی مسابقات</li></ul></div>
-<div><h4>باشگاه‌ها و تماس</h4><div class="locations"><div class="location">تهران، نوفل لوشاتو، بعد از پل حافظ، باشگاه ورزشی حیدرنیا</div><div class="location">تهران، شهید بهشتی، عباس میرزا، بین شقایق و شهید ملک‌محمدی، باشگاه ورزشی اندیشه</div><div class="location">تهران، سهروردی شمالی، نرسیده به خرمشهر، باشگاه ورزشی بنی جمالی</div></div><p style="margin-top:10px">09126494699</p></div>
-</div>
-<div class="copy"><div>© آکادمی والیبال هفت‌خان - تمامی حقوق محفوظ است.</div><div>طراحی و توسعه: <a href="https://instagram.com/resam_rm" target="_blank">مهندس رضا مهرابی</a></div></div>
-</div>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer" id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="footer-brand-logo">
+
+                    <img
+                        src="images/logo.png"
+                        alt="آکادمی والیبال هفت‌خان"
+                    >
+
+                    <strong>
+                        آکادمی والیبال هفت‌خان
+                    </strong>
+
+                </div>
+
+                <p>
+                    مجموعه‌ای برای آموزش، استعدادیابی و پرورش بازیکنان
+                    والیبال در مسیر رشد و رقابت حرفه‌ای.
+                </p>
+
+                <div class="socials">
+
+                    <a
+                        class="social"
+                        href="https://instagram.com/7khan_volleyballclub"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        class="social"
+                        href="https://t.me/bijanbarati"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Telegram"
+                    >
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>دسترسی سریع</h4>
+
+                <ul>
+                    <li><a href="#home">خانه</a></li>
+                    <li><a href="#academy">آکادمی</a></li>
+                    <li><a href="#courses">دوره‌ها</a></li>
+                    <li><a href="#coach">مربی</a></li>
+                    <li><a href="#team">تیم U16</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>خدمات</h4>
+
+                <ul>
+                    <li><a href="#courses">دوره مبتدی</a></li>
+                    <li><a href="#courses">دوره نیمه پیشرفته</a></li>
+                    <li><a href="#courses">دوره پیشرفته</a></li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="openModal('registerModal')">
+                            ثبت‌نام آنلاین
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>ارتباط با ما</h4>
+
+                <div class="footer-contact">
+
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>
+                            تهران، نوفل لوشاتو، بعد از پل حافظ،
+                            باشگاه ورزشی حیدرنیا
+                        </span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>
+                            تهران، شهید بهشتی، عباس میرزا،
+                            بین شقایق و شهید ملک‌محمدی،
+                            باشگاه ورزشی اندیشه
+                        </span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>
+                            تهران، سهروردی شمالی، نرسیده به خرمشهر،
+                            باشگاه ورزشی بنی جمالی
+                        </span>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:09126494699">
+                            09126494699
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © آکادمی والیبال هفت‌خان - تمامی حقوق محفوظ است.
+            </div>
+
+            <div class="designer">
+                طراحی و توسعه
+                <a
+                    href="https://instagram.com/resam_rm"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    مهندس رضا مهرابی
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
 </footer>
 
-<div class="modal" id="playersModal" onclick="outsideClose(event,'playersModal')"><div class="modal-card"><button class="close" onclick="closeModal('playersModal')">×</button><div class="modal-title"><div class="eyebrow">U16 ROSTER</div><h2>بازیکنان تیم زیر ۱۶ سال</h2></div><div class="players">
-<div class="player"><img src="images/player1.jpg"><div class="player-info"><b>سهیل کنعان رو</b><span>11</span></div></div>
-<div class="player"><img src="images/player2.jpg"><div class="player-info"><b>سبحان بهجت پناه</b><span>4</span></div></div>
-<div class="player"><img src="images/player0.jpg"><div class="player-info"><b>سورنا</b><span>7</span></div></div>
-<div class="player"><img src="images/player4.jpg"><div class="player-info"><b>امیرعباس عابدی</b><span>8</span></div></div>
-<div class="player"><img src="images/player5.jpg"><div class="player-info"><b>سپهر فراهانی</b><span>16</span></div></div>
-<div class="player"><img src="images/player6.jpg"><div class="player-info"><b>علی اکبر خیرانی</b><span>2</span></div></div>
-<div class="player"><img src="images/player7.jpg"><div class="player-info"><b>کیارش اسمعیل زاده</b><span>6</span></div></div>
-<div class="player"><img src="images/player8.jpg"><div class="player-info"><b>برسام ادیبی</b><span>9</span></div></div>
-<div class="player"><img src="images/player9.jpg"><div class="player-info"><b>متین رضوان</b><span>5</span></div></div>
-<div class="player"><img src="images/player10.jpg"><div class="player-info"><b>طاهر قنبری</b><span>10</span></div></div>
-<div class="player"><img src="images/player11.jpg"><div class="player-info"><b>نوید سلامی</b><span>40</span></div></div>
-<div class="player"><img src="images/player3.jpg"><div class="player-info"><b>یزدان خسروی</b><span>21</span></div></div>
-<div class="player"><img src="images/player12.jpg"><div class="player-info"><b>امیر میرزازاده</b><span>20</span></div></div>
-</div></div></div>
 
-<div class="modal" id="registerModal" onclick="outsideClose(event,'registerModal')"><div class="modal-card" style="max-width:680px"><button class="close" onclick="closeModal('registerModal')">×</button><div class="modal-title"><div class="eyebrow">REGISTRATION</div><h2>ثبت‌نام در آکادمی</h2></div>
-<form class="form" id="registerForm">
-<div class="form-grid"><div class="field"><label>نام</label><input required></div><div class="field"><label>نام خانوادگی</label><input required></div></div>
-<div class="field"><label>شماره تماس</label><input required inputmode="tel"></div>
-<div class="field"><label>باشگاه / برنامه تمرینی</label><select id="courseSelect" required><option value="">انتخاب کنید</option><optgroup label="اندیشه"><option value="andisheh">یک ماهه - ۲ روز در هفته - شنبه و چهارشنبه - ساعت 17:30 الی 19:00</option></optgroup><optgroup label="بنی‌جمالی"><option value="bony-beginner">یک ماهه مبتدی - یکشنبه و سه‌شنبه - 11:30 الی 12:30</option><option value="bony-advanced">یک ماهه نیمه پیشرفته و پیشرفته - یکشنبه و سه‌شنبه - 19:00 الی 20:30</option></optgroup><optgroup label="حیدرنیا"><option value="hey-advanced">یک ماهه پیشرفته - شنبه و چهارشنبه - 7:30 الی 9:00 صبح</option><option value="hey-beginner">یک ماهه مبتدی - شنبه و چهارشنبه - 9:00 الی 10:30 صبح</option><option value="hey-intermediate">یک ماهه نیمه پیشرفته - شنبه و چهارشنبه - 10:30 الی 12:00</option></optgroup></select></div>
-<div class="note" id="payNote">بعد از انتخاب دوره، مسیر پرداخت مربوط به همان برنامه نمایش داده می‌شود.</div>
-<button class="btn primary" type="submit">ادامه و پرداخت <i class="fa-solid fa-arrow-left"></i></button>
-</form></div></div>
+<!-- ======================================================
+     PLAYERS MODAL
+====================================================== -->
 
-<div class="modal lightbox" id="lightbox" onclick="closeModal('lightbox')"><button class="close">×</button><img id="lightboxImg" src="" alt=""></div>
+<div class="modal" id="playersModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+                <h2>اعضای تیم زیر ۱۶ سال</h2>
+                <p>
+                    فهرست بازیکنان آکادمی والیبال هفت‌خان
+                </p>
+            </div>
+
+            <button class="close-modal" onclick="closeModal('playersModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="player-grid">
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player1.jpg" alt="سهیل کنعان رو">
+                    </div>
+                    <div class="player-info">
+                        <strong>سهیل کنعان رو</strong>
+                        <span class="player-number">11</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player2.jpg" alt="سبحان بهجت پناه">
+                    </div>
+                    <div class="player-info">
+                        <strong>سبحان بهجت پناه</strong>
+                        <span class="player-number">4</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player0.jpg" alt="سورنا">
+                    </div>
+                    <div class="player-info">
+                        <strong>سورنا</strong>
+                        <span class="player-number">7</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player4.jpg" alt="امیرعباس عابدی">
+                    </div>
+                    <div class="player-info">
+                        <strong>امیرعباس عابدی</strong>
+                        <span class="player-number">8</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player5.jpg" alt="سپهر فراهانی">
+                    </div>
+                    <div class="player-info">
+                        <strong>سپهر فراهانی</strong>
+                        <span class="player-number">16</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player6.jpg" alt="علی اکبر خیرانی">
+                    </div>
+                    <div class="player-info">
+                        <strong>علی اکبر خیرانی</strong>
+                        <span class="player-number">2</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player7.jpg" alt="کیارش اسمعیل زاده">
+                    </div>
+                    <div class="player-info">
+                        <strong>کیارش اسمعیل زاده</strong>
+                        <span class="player-number">6</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player8.jpg" alt="برسام ادیبی">
+                    </div>
+                    <div class="player-info">
+                        <strong>برسام ادیبی</strong>
+                        <span class="player-number">9</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player9.jpg" alt="متین رضوان">
+                    </div>
+                    <div class="player-info">
+                        <strong>متین رضوان</strong>
+                        <span class="player-number">5</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player10.jpg" alt="طاهر قنبری">
+                    </div>
+                    <div class="player-info">
+                        <strong>طاهر قنبری</strong>
+                        <span class="player-number">10</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player11.jpg" alt="نوید سلامی">
+                    </div>
+                    <div class="player-info">
+                        <strong>نوید سلامی</strong>
+                        <span class="player-number">40</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player3.jpg" alt="یزدان خسروی">
+                    </div>
+                    <div class="player-info">
+                        <strong>یزدان خسروی</strong>
+                        <span class="player-number">21</span>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img src="images/player12.jpg" alt="امیر میرزازاده">
+                    </div>
+                    <div class="player-info">
+                        <strong>امیر میرزازاده</strong>
+                        <span class="player-number">20</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     MATCH MODAL
+====================================================== -->
+
+<div class="modal" id="matchesModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+                <h2>برنامه و نتایج مسابقات</h2>
+                <p>آخرین اطلاعات ثبت‌شده تیم</p>
+            </div>
+
+            <button class="close-modal" onclick="closeModal('matchesModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="match-tabs">
+
+                <button
+                    class="match-tab active"
+                    onclick="showMatches('schedule',this)"
+                >
+                    برنامه مسابقات
+                </button>
+
+                <button
+                    class="match-tab"
+                    onclick="showMatches('results',this)"
+                >
+                    نتایج
+                </button>
+
+            </div>
+
+
+            <div id="scheduleMatches">
+
+                <div class="match-table">
+
+                    <div class="match-row head">
+                        <div>تاریخ</div>
+                        <div>حریف</div>
+                        <div>ساعت</div>
+                        <div>محل</div>
+                    </div>
+
+                    <div class="match-row">
+                        <div>1405/03/30</div>
+                        <div>آکادمی مهر شمیران</div>
+                        <div>09:00</div>
+                        <div>سالن خانه والیبال</div>
+                    </div>
+
+                    <div class="match-row">
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                    </div>
+
+                    <div class="match-row">
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="resultMatches" style="display:none;">
+
+                <div class="match-table">
+
+                    <div class="match-row head">
+                        <div>تاریخ</div>
+                        <div>مسابقه</div>
+                        <div>نتیجه</div>
+                        <div>وضعیت</div>
+                    </div>
+
+                    <div class="match-row">
+                        <div>1405/03/30</div>
+                        <div>هفت‌خان - آکادمی مهر شمیران</div>
+                        <div class="match-result">0 - 2</div>
+                        <div>❌</div>
+                    </div>
+
+                    <div class="match-row">
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                    </div>
+
+                    <div class="match-row">
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                        <div>---</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     KITS MODAL
+====================================================== -->
+
+<div class="modal" id="kitsModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+                <h2>کیت رسمی تیم</h2>
+                <p>لباس‌های مسابقه آکادمی</p>
+            </div>
+
+            <button class="close-modal" onclick="closeModal('kitsModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="kit-grid">
+
+                <div class="kit-card">
+
+                    <div class="kit-image">
+                        <img
+                            src="images/kit-home.jpg"
+                            alt="کیت مسابقه اول"
+                        >
+                    </div>
+
+                    <div class="kit-info">
+                        <h3>کیت مسابقه اول</h3>
+                        <p>
+                            لباس اول رسمی تیم آکادمی والیبال هفت‌خان
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="kit-card">
+
+                    <div class="kit-image">
+                        <img
+                            src="images/kit-away.jpg"
+                            alt="کیت مسابقه دوم"
+                        >
+                    </div>
+
+                    <div class="kit-info">
+                        <h3>کیت مسابقه دوم</h3>
+                        <p>
+                            لباس دوم رسمی تیم آکادمی والیبال هفت‌خان
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     GALLERY MODAL
+====================================================== -->
+
+<div class="modal" id="galleryModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+                <h2>گالری تصاویر</h2>
+                <p>تمرینات، مسابقات و لحظات آکادمی</p>
+            </div>
+
+            <button class="close-modal" onclick="closeModal('galleryModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="images/g1.jpg" alt="گالری 1">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g2.jpg" alt="گالری 2">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g3.jpg" alt="گالری 3">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g4.jpg" alt="گالری 4">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g5.jpg" alt="گالری 5">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g6.jpg" alt="گالری 6">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g7.jpg" alt="گالری 7">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g8.jpg" alt="گالری 8">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g9.jpg" alt="گالری 9">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g10.jpg" alt="گالری 10">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g11.jpg" alt="گالری 11">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g12.jpg" alt="گالری 12">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g13.jpg" alt="گالری 13">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g14.jpg" alt="گالری 14">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g15.jpg" alt="گالری 15">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g16.jpg" alt="گالری 16">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/g17.jpg" alt="گالری 17">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     CONTACT MODAL
+====================================================== -->
+
+<div class="modal" id="contactModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+                <h2>ارتباط با آکادمی</h2>
+                <p>راه‌های ارتباطی و آدرس باشگاه‌ها</p>
+            </div>
+
+            <button class="close-modal" onclick="closeModal('contactModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <h3>تماس</h3>
+
+                    <a href="tel:09126494699">
+                        09126494699
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <h3>اینستاگرام</h3>
+
+                    <a
+                        href="https://instagram.com/7khan_volleyballclub"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        7khan_volleyballclub
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-telegram"></i>
+                    </div>
+
+                    <h3>تلگرام</h3>
+
+                    <a
+                        href="https://t.me/bijanbarati"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        ارتباط در تلگرام
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <h3>باشگاه حیدرنیا</h3>
+
+                    <p>
+                        تهران، نوفل لوشاتو، بعد از پل حافظ،
+                        باشگاه ورزشی حیدرنیا
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <h3>باشگاه اندیشه</h3>
+
+                    <p>
+                        تهران، شهید بهشتی، عباس میرزا،
+                        بین شقایق و شهید ملک‌محمدی،
+                        باشگاه ورزشی اندیشه
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <h3>باشگاه بنی جمالی</h3>
+
+                    <p>
+                        تهران، سهروردی شمالی، نرسیده به خرمشهر،
+                        باشگاه ورزشی بنی جمالی
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     REGISTER MODAL
+====================================================== -->
+
+<div class="modal" id="registerModal">
+
+    <div class="modal-box registration-box">
+
+        <div class="modal-head">
+
+            <div>
+                <h2>ثبت‌نام در آکادمی</h2>
+                <p>
+                    اطلاعات خود را وارد کنید تا دوره مناسب را انتخاب کنید.
+                </p>
+            </div>
+
+            <button class="close-modal" onclick="closeModal('registerModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <form id="registerForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="firstName">
+                            نام
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            placeholder="نام"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">
+                            نام خانوادگی
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            placeholder="نام خانوادگی"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="phone">
+                            شماره تماس
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="0912..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="academy">
+                            انتخاب باشگاه
+                        </label>
+
+                        <select id="academy" required>
+
+                            <option value="">
+                                انتخاب کنید
+                            </option>
+
+                            <option value="andisheh">
+                                باشگاه اندیشه
+                            </option>
+
+                            <option value="bony">
+                                باشگاه بنی جمالی
+                            </option>
+
+                            <option value="heydarnia">
+                                باشگاه حیدرنیا
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="course">
+                            انتخاب دوره
+                        </label>
+
+                        <select id="course" required>
+
+                            <option value="">
+                                ابتدا باشگاه را انتخاب کنید
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-note" id="courseInfo">
+                    بعد از انتخاب باشگاه، دوره‌های فعال آن نمایش داده می‌شود.
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary form-submit"
+                >
+                    ادامه و پرداخت
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     LIGHTBOX
+====================================================== -->
+
+<div class="lightbox" id="lightbox">
+
+    <button
+        class="lightbox-close"
+        onclick="closeLightbox()"
+        aria-label="بستن"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <img id="lightboxImage" src="" alt="تصویر گالری">
+
+</div>
+
 
 <script>
-const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.dot')];
-let current=0;
-function showSlide(i){slides[current].classList.remove('active');dots[current].classList.remove('active');current=i;slides[current].classList.add('active');dots[current].classList.add('active')}
-setInterval(()=>showSlide((current+1)%slides.length),5000);
-dots.forEach((d,i)=>d.onclick=()=>showSlide(i));
-function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
-function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
-function outsideClose(e,id){if(e.target.id===id)closeModal(id)}
-function toggleMenu(){const n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex';if(n.style.display==='flex'){n.style.position='absolute';n.style.top='80px';n.style.right='0';n.style.left='0';n.style.flexDirection='column';n.style.padding='12px';n.style.background='#0a1728';n.style.border='1px solid var(--line)';n.style.borderRadius='18px'}}
-function lightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;openModal('lightbox')}
-const paymentLinks={andisheh:'https://zarinp.al/yourlink1','bony-beginner':'https://zarinp.al/yourlink1','bony-advanced':'https://zarinp.al/yourlink1','hey-advanced':'https://zarinp.al/yourlink2','hey-beginner':'https://zarinp.al/yourlink2','hey-intermediate':'https://zarinp.al/yourlink3'};
-document.getElementById('courseSelect').addEventListener('change',e=>{document.getElementById('payNote').textContent=e.target.value?'بعد از ارسال فرم، وارد صفحه پرداخت مربوط به این برنامه می‌شوید.':'بعد از انتخاب دوره، مسیر پرداخت مربوط به همان برنامه نمایش داده می‌شود.'});
-document.getElementById('registerForm').addEventListener('submit',e=>{e.preventDefault();const v=document.getElementById('courseSelect').value;if(v&&paymentLinks[v])window.open(paymentLinks[v],'_blank','noopener')});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>closeModal(m.id))});
+/* =========================================================
+   HEADER
+========================================================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 30){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const mainNav = document.getElementById("mainNav");
+
+menuBtn.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+
+    const icon = menuBtn.querySelector("i");
+
+    if(mainNav.classList.contains("open")){
+        icon.className = "fa-solid fa-xmark";
+    }else{
+        icon.className = "fa-solid fa-bars";
+    }
+});
+
+document.querySelectorAll(".main-nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mainNav.classList.remove("open");
+
+        menuBtn.querySelector("i").className =
+            "fa-solid fa-bars";
+
+    });
+
+});
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+function openModal(id){
+
+    const modal = document.getElementById(id);
+
+    if(!modal) return;
+
+    modal.classList.add("active");
+
+    document.body.classList.add("modal-open");
+}
+
+
+function closeModal(id){
+
+    const modal = document.getElementById(id);
+
+    if(!modal) return;
+
+    modal.classList.remove("active");
+
+    if(!document.querySelector(".modal.active")){
+        document.body.classList.remove("modal-open");
+    }
+}
+
+
+document.querySelectorAll(".modal").forEach(modal => {
+
+    modal.addEventListener("click", event => {
+
+        if(event.target === modal){
+
+            modal.classList.remove("active");
+
+            if(!document.querySelector(".modal.active")){
+                document.body.classList.remove("modal-open");
+            }
+
+        }
+
+    });
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if(event.key === "Escape"){
+
+        document.querySelectorAll(".modal.active")
+            .forEach(modal => modal.classList.remove("active"));
+
+        document.body.classList.remove("modal-open");
+
+        closeLightbox();
+    }
+
+});
+
+
+/* =========================================================
+   MATCH TABS
+========================================================= */
+
+function showMatches(type, button){
+
+    document
+        .querySelectorAll(".match-tab")
+        .forEach(tab => tab.classList.remove("active"));
+
+    button.classList.add("active");
+
+    const schedule =
+        document.getElementById("scheduleMatches");
+
+    const results =
+        document.getElementById("resultMatches");
+
+    if(type === "schedule"){
+
+        schedule.style.display = "block";
+        results.style.display = "none";
+
+    }else{
+
+        schedule.style.display = "none";
+        results.style.display = "block";
+
+    }
+
+}
+
+
+/* =========================================================
+   GALLERY LIGHTBOX
+========================================================= */
+
+document.querySelectorAll(".gallery-item img").forEach(image => {
+
+    image.addEventListener("click", () => {
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        lightboxImage.src = image.src;
+
+        lightbox.classList.add("active");
+
+    });
+
+});
+
+
+function closeLightbox(){
+
+    document
+        .getElementById("lightbox")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================================
+   REGISTER COURSES
+========================================================= */
+
+const academySelect =
+    document.getElementById("academy");
+
+const courseSelect =
+    document.getElementById("course");
+
+const courseInfo =
+    document.getElementById("courseInfo");
+
+
+const courses = {
+
+    andisheh: [
+
+        {
+            value:"andisheh",
+            text:"یک ماهه - ۲ روز در هفته - شنبه و چهارشنبه - ساعت 17:30 الی 19:00",
+            payment:"https://zarinp.al/yourlink1"
+        }
+
+    ],
+
+    bony: [
+
+        {
+            value:"bony-beginner",
+            text:"یک ماهه مبتدی - یکشنبه و سه‌شنبه - 11:30 الی 12:30",
+            payment:"https://zarinp.al/yourlink1"
+        },
+
+        {
+            value:"bony-advanced",
+            text:"یک ماهه نیمه پیشرفته و پیشرفته - یکشنبه و سه‌شنبه - 19:00 الی 20:30",
+            payment:"https://zarinp.al/yourlink1"
+        }
+
+    ],
+
+    heydarnia: [
+
+        {
+            value:"hey-advanced",
+            text:"یک ماهه پیشرفته - شنبه و چهارشنبه - 7:30 الی 9:00 صبح",
+            payment:"https://zarinp.al/yourlink2"
+        },
+
+        {
+            value:"hey-beginner",
+            text:"یک ماهه مبتدی - شنبه و چهارشنبه - 9:00 الی 10:30 صبح",
+            payment:"https://zarinp.al/yourlink2"
+        },
+
+        {
+            value:"hey-intermediate",
+            text:"یک ماهه نیمه پیشرفته - شنبه و چهارشنبه - 10:30 الی 12:00",
+            payment:"https://zarinp.al/yourlink3"
+        }
+
+    ]
+
+};
+
+
+academySelect.addEventListener("change", () => {
+
+    const academy = academySelect.value;
+
+    courseSelect.innerHTML = "";
+
+    courseInfo.textContent =
+        "دوره مورد نظر خود را انتخاب کنید.";
+
+    if(!academy){
+
+        courseSelect.innerHTML =
+            `<option value="">ابتدا باشگاه را انتخاب کنید</option>`;
+
+        return;
+
+    }
+
+    courseSelect.innerHTML =
+        `<option value="">انتخاب دوره</option>`;
+
+    courses[academy].forEach(course => {
+
+        const option = document.createElement("option");
+
+        option.value = course.value;
+
+        option.textContent = course.text;
+
+        courseSelect.appendChild(option);
+
+    });
+
+});
+
+
+courseSelect.addEventListener("change", () => {
+
+    const selected = courseSelect.value;
+
+    let found = null;
+
+    Object.values(courses).forEach(list => {
+
+        list.forEach(course => {
+
+            if(course.value === selected){
+                found = course;
+            }
+
+        });
+
+    });
+
+    if(found){
+
+        courseInfo.textContent =
+            "دوره انتخاب‌شده آماده ثبت‌نام است.";
+
+    }
+
+});
+
+
+/* =========================================================
+   REGISTER SUBMIT
+========================================================= */
+
+document
+    .getElementById("registerForm")
+    .addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        const firstName =
+            document.getElementById("firstName").value.trim();
+
+        const lastName =
+            document.getElementById("lastName").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const academy =
+            academySelect.value;
+
+        const selectedCourse =
+            courseSelect.value;
+
+
+        if(
+            !firstName ||
+            !lastName ||
+            !phone ||
+            !academy ||
+            !selectedCourse
+        ){
+
+            alert("لطفاً تمام اطلاعات را کامل کنید.");
+
+            return;
+
+        }
+
+
+        let paymentUrl = "";
+
+        Object.values(courses).forEach(list => {
+
+            list.forEach(course => {
+
+                if(course.value === selectedCourse){
+
+                    paymentUrl = course.payment;
+
+                }
+
+            });
+
+        });
+
+
+        /*
+          توجه:
+          لینک‌های زیر نمونه هستند.
+          قبل از انتشار سایت، لینک واقعی درگاه زرین‌پال
+          را جایگزین کنید.
+        */
+
+        if(
+            !paymentUrl ||
+            paymentUrl.includes("yourlink")
+        ){
+
+            alert(
+                "لینک پرداخت هنوز توسط مدیریت سایت تنظیم نشده است."
+            );
+
+            return;
+
+        }
+
+
+        window.location.href = paymentUrl;
+
+    });
+
+
+/* =========================================================
+   CONTACT SHORTCUT
+========================================================= */
+
+document.querySelectorAll('a[href="#contact"]').forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        event.preventDefault();
+
+        openModal("contactModal");
+
+    });
+
+});
 </script>
+
 </body>
 </html>
