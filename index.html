@@ -1336,6 +1336,354 @@ font-size:17px;
 }
 
 }
+  /* ================= FOOTER NEW ================= */
+
+.footer{
+    margin-top:80px;
+    padding:70px 30px 25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(0,0,0,.98),
+        rgba(20,20,20,.98)
+    );
+
+    border-top:1px solid rgba(212,175,55,.25);
+
+    box-shadow:
+        0 -15px 50px rgba(0,0,0,.3);
+
+    direction:rtl;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+
+    gap:60px;
+
+    text-align:right;
+}
+
+
+/* معرفی */
+
+.footer-about{
+    display:flex;
+    flex-direction:column;
+}
+
+.footer-logo{
+    width:90px;
+    height:90px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+    padding:8px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(212,175,55,.35);
+
+    background:rgba(255,255,255,.03);
+
+    box-shadow:
+        0 0 25px rgba(212,175,55,.15);
+}
+
+.footer-about p{
+    color:#cfcfcf;
+
+    font-size:14px;
+
+    line-height:2.2;
+
+    max-width:500px;
+
+    margin:0;
+}
+
+
+/* شبکه های اجتماعی */
+
+.footer-social{
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.footer-social a{
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(212,175,55,.25);
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    transform:translateY(-5px);
+
+    background:#d4af37;
+
+    color:#000;
+
+    border-color:#d4af37;
+
+    box-shadow:
+        0 8px 25px rgba(212,175,55,.25);
+}
+
+.footer-social i{
+    font-size:19px;
+}
+
+
+/* ستون های فوتر */
+
+.footer-column h3{
+    color:#d4af37;
+
+    font-size:20px;
+
+    font-weight:900;
+
+    margin-bottom:25px;
+
+    position:relative;
+
+    padding-bottom:12px;
+}
+
+.footer-column h3::after{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:45px;
+    height:2px;
+
+    background:#d4af37;
+
+    border-radius:10px;
+}
+
+
+.footer-column ul{
+    list-style:none;
+
+    padding:0;
+    margin:0;
+}
+
+.footer-column li{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:16px;
+
+    color:#cfcfcf;
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+.footer-column li i{
+    color:#d4af37;
+
+    min-width:18px;
+
+    margin-top:5px;
+
+    font-size:14px;
+}
+
+.footer-column a{
+    color:#cfcfcf;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:#d4af37;
+}
+
+
+/* پایین فوتر */
+
+.footer-bottom{
+    max-width:1200px;
+
+    margin:55px auto 0;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(212,175,55,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-bottom > p{
+    color:#777;
+
+    font-size:13px;
+
+    margin:0;
+}
+
+
+/* طراح */
+
+.footer .designer{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:9px 16px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(212,175,55,.2);
+
+    transition:.3s;
+}
+
+.footer .designer:hover{
+    border-color:#d4af37;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(212,175,55,.15);
+}
+
+.footer .designer span{
+    color:#777;
+
+    font-size:12px;
+}
+
+.footer .designer a{
+    color:#d4af37;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+}
+
+.footer .designer a:hover{
+    color:#f3d56a;
+}
+
+
+/* ================= FOOTER MOBILE ================= */
+
+@media(max-width:768px){
+
+    .footer{
+        padding:50px 20px 20px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+        text-align:center;
+    }
+
+    .footer-about{
+        align-items:center;
+    }
+
+    .footer-about p{
+        max-width:100%;
+
+        font-size:13px;
+
+        line-height:2.1;
+    }
+
+    .footer-logo{
+        width:80px;
+        height:80px;
+    }
+
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer-column{
+        text-align:right;
+    }
+
+    .footer-column h3{
+        text-align:right;
+    }
+
+    .footer-column h3::after{
+        right:0;
+    }
+
+    .footer-bottom{
+        margin-top:40px;
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .footer-bottom > p{
+        line-height:2;
+    }
+
+}
 
 </style>
 
@@ -1652,29 +2000,200 @@ onclick="openLightbox(this.src)">
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer class="footer">
 
-<p class="copyright">
-© آکادمی والیبال هفت‌خان - تمامی حقوق محفوظ است.
-</p>
+  <div class="footer-container">
 
-<div class="designer">
+    <!-- معرفی آکادمی -->
+    <div class="footer-about">
 
-<span>
-طراحی و توسعه
-</span>
+      <img src="images/logo.png" class="footer-logo" alt="آکادمی والیبال هفت‌خان">
 
-<a href="https://instagram.com/resam_rm" target="_blank">
+      <p>
+        آکادمی والیبال هفت‌خان با بهره‌گیری از مربیان مجرب،
+        برنامه‌های آموزشی اصولی و امکانات مناسب، در مسیر
+        استعدادیابی، آموزش و پرورش نسل آینده والیبال فعالیت می‌کند.
+        هدف ما پرورش ورزشکارانی توانمند و آماده برای حضور در
+        رقابت‌های حرفه‌ای و قهرمانی است.
+      </p>
 
-<i class="fa-brands fa-instagram"></i>
+      <div class="footer-social">
 
-مهندس رضا مهرابی
+        <a href="https://instagram.com/7khan_volleyballclub"
+           target="_blank"
+           aria-label="Instagram">
 
-</a>
+          <i class="fa-brands fa-instagram"></i>
 
-</div>
+        </a>
+
+        <a href="https://t.me/bijanbarati"
+           target="_blank"
+           aria-label="Telegram">
+
+          <i class="fa-brands fa-telegram"></i>
+
+        </a>
+
+        <a href="tel:09126494699"
+           aria-label="تماس">
+
+          <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+        <a href="mailto:info@7khanvolleyball.ir"
+           aria-label="Email">
+
+          <i class="fa-solid fa-envelope"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- تماس با ما -->
+    <div class="footer-column">
+
+      <h3>
+        تماس با ما
+      </h3>
+
+      <ul>
+
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+
+          <span>
+            تهران، نوفل لوشاتو، بعد از پل حافظ،
+            باشگاه ورزشی حیدرنیا
+          </span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+
+          <span>
+            تهران، شهید بهشتی، عباس میرزا،
+            باشگاه ورزشی اندیشه
+          </span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+
+          <span>
+            تهران، سهروردی شمالی، نرسیده به خرمشهر،
+            باشگاه ورزشی بنی جمالی
+          </span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-phone"></i>
+
+          <a href="tel:09126494699">
+            09126494699
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-clock"></i>
+
+          <span>
+            ساعت پاسخگویی: 10 الی 18
+          </span>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- لینک های کاربردی -->
+    <div class="footer-column">
+
+      <h3>
+        لینک‌های کاربردی
+      </h3>
+
+      <ul>
+
+        <li>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="#home">
+            صفحه اصلی
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="#courses">
+            دوره‌های آموزشی
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="#coach">
+            مربی آکادمی
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="#" onclick="openInfoModal('teamModal'); return false;">
+            تیم زیر ۱۶ سال
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="#" onclick="openInfoModal('matchesModal'); return false;">
+            مسابقات
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="#" onclick="openInfoModal('galleryModal'); return false;">
+            گالری تصاویر
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- پایین فوتر -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © آکادمی والیبال هفت‌خان - تمامی حقوق محفوظ است.
+    </p>
+
+    <div class="designer">
+
+      <span>
+        طراحی و توسعه
+      </span>
+
+      <a href="https://instagram.com/resam_rm" target="_blank">
+
+        <i class="fa-brands fa-instagram"></i>
+
+        مهندس رضا مهرابی
+
+      </a>
+
+    </div>
+
+  </div>
 
 </footer>
 
